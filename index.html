@@ -1,0 +1,1709 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VK挠痒痒 - 品牌_原创欢乐影像社区</title>
+<meta name="description" content="VK挠痒痒官方网站，专注轻松解压与欢乐互动影像内容的原创视频品牌，为创作者与用户搭建高品质内容生态。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23ff6b35'/%3E%3Ccircle cx='32' cy='24' r='9' fill='%23fff7ef'/%3E%3Cpath d='M14 46c4-10 12-14 18-14s14 4 18 14z' fill='%23fff7ef'/%3E%3Ccircle cx='24' cy='22' r='2' fill='%23ff6b35'/%3E%3Ccircle cx='40' cy='22' r='2' fill='%23ff6b35'/%3E%3C/svg%3E">
+<style>
+:root{
+  --vk-orange:#ff6b35;
+  --vk-orange-deep:#e2501c;
+  --vk-amber:#ffb347;
+  --vk-cream:#fff7ef;
+  --vk-cream-2:#fdeede;
+  --vk-ink:#2f241d;
+  --vk-ink-soft:#6b5a4e;
+  --vk-line:rgba(47,36,29,.1);
+  --vk-shadow:0 18px 40px -22px rgba(80,42,16,.45);
+  --vk-radius:18px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:118px}
+body{
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  background:var(--vk-cream);
+  color:var(--vk-ink);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+ul{list-style:none}
+
+/* ---------- 吸顶公告 + 页头 ---------- */
+.vk-sticky-wrap{position:sticky;top:0;z-index:90}
+.vk-notice{
+  background:linear-gradient(90deg,var(--vk-orange-deep),var(--vk-orange) 60%,var(--vk-amber));
+  color:#fff;
+  font-size:13.5px;
+  letter-spacing:.3px;
+  display:flex;align-items:center;justify-content:center;gap:14px;
+  padding:9px 18px;
+  flex-wrap:wrap;
+  text-align:center;
+}
+.vk-notice strong{
+  background:rgba(255,255,255,.22);
+  border-radius:999px;
+  padding:2px 10px;
+  font-size:12px;
+  font-weight:600;
+  white-space:nowrap;
+}
+.vk-notice a{text-decoration:underline;text-underline-offset:3px;opacity:.95}
+.vk-notice a:hover{opacity:1}
+
+.vk-header{
+  background:rgba(255,247,239,.94);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--vk-line);
+}
+.vk-header-inner{
+  max-width:1240px;margin:0 auto;
+  display:flex;align-items:center;gap:22px;
+  padding:12px 24px;
+}
+.vk-logo{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.vk-logo-mark{
+  width:42px;height:42px;border-radius:13px;
+  background:linear-gradient(135deg,var(--vk-orange),var(--vk-amber));
+  display:grid;place-items:center;
+  box-shadow:0 8px 18px -8px rgba(226,80,28,.7);
+}
+.vk-logo-mark svg{width:24px;height:24px}
+.vk-logo-text b{display:block;font-size:17px;letter-spacing:.5px;line-height:1.2}
+.vk-logo-text span{display:block;font-size:11px;color:var(--vk-ink-soft);letter-spacing:2px}
+.vk-nav{display:flex;gap:4px;margin-left:8px;flex-wrap:wrap}
+.vk-nav a{
+  font-size:14.5px;padding:8px 13px;border-radius:10px;
+  color:var(--vk-ink-soft);transition:.25s;white-space:nowrap;
+}
+.vk-nav a:hover,.vk-nav a.is-active{background:var(--vk-cream-2);color:var(--vk-orange-deep);font-weight:600}
+.vk-header-tools{display:flex;align-items:center;gap:10px;margin-left:auto}
+.vk-search{position:relative;display:flex;align-items:center}
+.vk-search input{
+  width:210px;border:1px solid var(--vk-line);
+  background:#fff;border-radius:999px;
+  padding:9px 40px 9px 16px;font-size:13.5px;color:var(--vk-ink);
+  outline:none;transition:.25s;
+}
+.vk-search input:focus{border-color:var(--vk-orange);box-shadow:0 0 0 4px rgba(255,107,53,.13);width:240px}
+.vk-search button{
+  position:absolute;right:5px;width:30px;height:30px;border-radius:50%;
+  display:grid;place-items:center;background:var(--vk-orange);color:#fff;
+}
+.vk-search button svg{width:15px;height:15px}
+.vk-search-feedback{
+  position:absolute;top:calc(100% + 8px);left:0;right:0;
+  background:#fff;border:1px solid var(--vk-line);border-radius:12px;
+  box-shadow:var(--vk-shadow);padding:10px 14px;font-size:12.5px;
+  color:var(--vk-ink-soft);display:none;
+}
+.vk-search-feedback.is-show{display:block}
+.vk-btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:7px;
+  border-radius:999px;font-size:14px;font-weight:600;
+  padding:10px 20px;transition:.25s;white-space:nowrap;
+}
+.vk-btn-primary{background:var(--vk-orange);color:#fff;box-shadow:0 12px 24px -14px rgba(226,80,28,.9)}
+.vk-btn-primary:hover{background:var(--vk-orange-deep);transform:translateY(-1px)}
+.vk-btn-ghost{border:1.5px solid rgba(255,255,255,.6);color:#fff}
+.vk-btn-ghost:hover{background:rgba(255,255,255,.16)}
+.vk-btn-outline{border:1.5px solid var(--vk-orange);color:var(--vk-orange-deep)}
+.vk-btn-outline:hover{background:var(--vk-cream-2)}
+.vk-nav-toggle{display:none;width:40px;height:40px;border-radius:10px;background:var(--vk-cream-2);place-items:center}
+.vk-nav-toggle svg{width:20px;height:20px}
+
+/* ---------- 通用版式 ---------- */
+.vk-section{max-width:1240px;margin:0 auto;padding:76px 24px}
+.vk-sec-head{max-width:760px;margin-bottom:38px}
+.vk-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12.5px;font-weight:700;letter-spacing:2.5px;
+  color:var(--vk-orange-deep);text-transform:uppercase;margin-bottom:12px;
+}
+.vk-eyebrow::before{content:"";width:22px;height:2px;background:var(--vk-orange);border-radius:2px}
+.vk-sec-head h2{font-size:clamp(24px,3.2vw,34px);line-height:1.35;letter-spacing:.5px}
+.vk-sec-head p{color:var(--vk-ink-soft);font-size:15px;margin-top:12px}
+.vk-elevate{background:#fff;border:1px solid var(--vk-line);border-radius:var(--vk-radius);box-shadow:var(--vk-shadow)}
+
+/* ---------- 首屏 ---------- */
+.vk-hero{
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(900px 480px at 88% -12%,rgba(255,179,71,.5),transparent 65%),
+    radial-gradient(700px 420px at 4% 110%,rgba(255,107,53,.35),transparent 62%),
+    linear-gradient(160deg,#3a2a20,#5a3a24 55%,#7a4a25);
+  color:#fff;
+}
+.vk-hero::after{
+  content:"";position:absolute;inset:0;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='.09' stroke-width='1.2'%3E%3Ccircle cx='20' cy='20' r='10'/%3E%3Ccircle cx='90' cy='34' r='16'/%3E%3Cpath d='M0 90c30-24 60 24 120-10'/%3E%3C/g%3E%3C/svg%3E");
+  pointer-events:none;
+}
+.vk-hero-inner{
+  position:relative;z-index:2;max-width:1240px;margin:0 auto;
+  padding:70px 24px 84px;
+  display:grid;grid-template-columns:1.05fr .95fr;gap:54px;align-items:center;
+}
+.vk-hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.26);
+  border-radius:999px;padding:6px 15px;font-size:12.5px;letter-spacing:1px;
+  margin-bottom:20px;
+}
+.vk-hero-badge i{width:7px;height:7px;border-radius:50%;background:var(--vk-amber);box-shadow:0 0 0 4px rgba(255,179,71,.25)}
+.vk-hero h1{
+  font-size:clamp(40px,6.4vw,68px);line-height:1.06;letter-spacing:1px;
+  font-weight:800;
+}
+.vk-hero h1 em{
+  font-style:normal;
+  background:linear-gradient(100deg,var(--vk-amber),#ffe2b8);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.vk-hero-lead{
+  font-size:16.5px;line-height:1.85;color:rgba(255,247,239,.88);
+  margin:22px 0 10px;max-width:560px;
+}
+.vk-hero-intro{
+  font-size:14px;line-height:1.9;color:rgba(255,247,239,.7);
+  max-width:560px;border-left:2px solid rgba(255,179,71,.6);padding-left:16px;
+}
+.vk-hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.vk-hero-stats{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:14px;
+  margin-top:34px;max-width:560px;
+}
+.vk-stat{
+  background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.16);
+  border-radius:14px;padding:14px 16px;
+}
+.vk-stat b{display:block;font-size:24px;line-height:1.2;letter-spacing:.5px;color:var(--vk-amber)}
+.vk-stat span{font-size:12px;color:rgba(255,247,239,.72);letter-spacing:.6px}
+
+/* 首屏视频主视觉 */
+.vk-hero-visual{position:relative}
+.vk-hero-cover{
+  position:relative;border-radius:22px;overflow:hidden;
+  border:1px solid rgba(255,255,255,.24);
+  box-shadow:0 40px 70px -34px rgba(0,0,0,.75);
+  aspect-ratio:16/9;
+}
+.vk-hero-cover img{width:100%;height:100%;object-fit:cover}
+.vk-play{
+  position:absolute;inset:0;display:grid;place-items:center;
+  background:linear-gradient(180deg,rgba(20,10,4,.05),rgba(20,10,4,.62));
+}
+.vk-play-btn{
+  width:68px;height:68px;border-radius:50%;
+  background:rgba(255,255,255,.94);color:var(--vk-orange-deep);
+  display:grid;place-items:center;
+  box-shadow:0 14px 30px -10px rgba(0,0,0,.6);
+  transition:.3s;
+}
+.vk-play-btn svg{width:24px;height:24px;margin-left:3px}
+.vk-play-btn:hover{transform:scale(1.08)}
+.vk-hero-cover-tag{
+  position:absolute;left:14px;top:14px;
+  background:rgba(255,107,53,.94);border-radius:999px;
+  font-size:12px;font-weight:700;padding:5px 12px;letter-spacing:.6px;
+}
+.vk-hero-cover-meta{
+  position:absolute;left:16px;right:16px;bottom:16px;
+  display:flex;align-items:flex-end;justify-content:space-between;gap:12px;
+}
+.vk-hero-cover-meta h3{font-size:16px;line-height:1.4;max-width:70%}
+.vk-hero-cover-meta span{font-size:12px;color:rgba(255,247,239,.8)}
+.vk-hero-float{
+  position:absolute;right:-8px;bottom:-26px;
+  background:#fff;color:var(--vk-ink);
+  border-radius:16px;padding:12px 16px;
+  display:flex;align-items:center;gap:11px;
+  box-shadow:0 24px 44px -20px rgba(0,0,0,.55);
+  max-width:250px;
+}
+.vk-hero-float .dot{
+  width:34px;height:34px;border-radius:11px;flex-shrink:0;
+  background:linear-gradient(135deg,var(--vk-orange),var(--vk-amber));
+  display:grid;place-items:center;color:#fff;
+}
+.vk-hero-float .dot svg{width:17px;height:17px}
+.vk-hero-float b{display:block;font-size:13.5px;line-height:1.3}
+.vk-hero-float small{font-size:11.5px;color:var(--vk-ink-soft)}
+
+/* ---------- 深度解析 ---------- */
+.vk-about{background:linear-gradient(180deg,#fff,var(--vk-cream))}
+.vk-about-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:44px;align-items:start}
+.vk-about-copy p{font-size:15px;color:var(--vk-ink-soft);margin-bottom:16px;line-height:1.95}
+.vk-about-copy p strong{color:var(--vk-ink)}
+.vk-about-copy h3{font-size:18.5px;margin:26px 0 10px;position:relative;padding-left:15px}
+.vk-about-copy h3::before{
+  content:"";position:absolute;left:0;top:.45em;width:6px;height:16px;border-radius:3px;
+  background:linear-gradient(var(--vk-orange),var(--vk-amber));
+}
+.vk-highlight-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:24px 0}
+.vk-highlight{
+  background:#fff;border:1px solid var(--vk-line);border-radius:14px;padding:16px 18px;
+}
+.vk-highlight b{display:block;color:var(--vk-orange-deep);font-size:14.5px;margin-bottom:5px}
+.vk-highlight span{font-size:13px;color:var(--vk-ink-soft);line-height:1.7}
+.vk-about-side{display:grid;gap:16px;position:sticky;top:130px}
+.vk-side-card{border-radius:var(--vk-radius);padding:24px;background:#fff;border:1px solid var(--vk-line);box-shadow:var(--vk-shadow)}
+.vk-side-card h3{font-size:16px;margin-bottom:14px}
+.vk-side-card p{font-size:13.5px;color:var(--vk-ink-soft);line-height:1.85}
+.vk-side-card.dark{background:linear-gradient(150deg,#3a2a20,#6b3f1f);color:#fff;border:none}
+.vk-side-card.dark h3{color:var(--vk-amber)}
+.vk-side-card.dark p{color:rgba(255,247,239,.82)}
+.vk-side-list{display:grid;gap:11px;margin-top:4px}
+.vk-side-list li{display:flex;justify-content:space-between;font-size:13px;color:var(--vk-ink-soft);padding-bottom:9px;border-bottom:1px dashed var(--vk-line)}
+.vk-side-list li:last-child{border:none;padding-bottom:0}
+.vk-side-list b{color:var(--vk-ink)}
+.vk-side-card.dark .vk-side-list li{color:rgba(255,247,239,.75);border-color:rgba(255,255,255,.16)}
+.vk-side-card.dark .vk-side-list b{color:var(--vk-amber)}
+
+/* ---------- 焦点内容 ---------- */
+.vk-feature-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:22px}
+.vk-card{background:#fff;border:1px solid var(--vk-line);border-radius:var(--vk-radius);overflow:hidden;transition:.3s;display:flex;flex-direction:column}
+.vk-card:hover{transform:translateY(-4px);box-shadow:var(--vk-shadow);border-color:rgba(255,107,53,.35)}
+.vk-thumb{position:relative;aspect-ratio:16/9;overflow:hidden;background:var(--vk-cream-2)}
+.vk-thumb img{width:100%;height:100%;object-fit:cover;transition:.5s}
+.vk-card:hover .vk-thumb img{transform:scale(1.05)}
+.vk-thumb .vk-badge-tag{
+  position:absolute;left:11px;top:11px;font-size:11.5px;font-weight:700;
+  background:rgba(255,107,53,.95);color:#fff;border-radius:999px;padding:4px 10px;letter-spacing:.5px;
+}
+.vk-thumb .vk-dur{
+  position:absolute;right:11px;bottom:11px;font-size:11.5px;
+  background:rgba(20,10,4,.72);color:#fff;border-radius:6px;padding:2px 8px;
+}
+.vk-thumb .vk-thumb-play{
+  position:absolute;inset:0;display:grid;place-items:center;
+  background:linear-gradient(180deg,transparent 40%,rgba(20,10,4,.42));
+  opacity:0;transition:.3s;
+}
+.vk-card:hover .vk-thumb-play{opacity:1}
+.vk-thumb-play i{
+  width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.95);
+  display:grid;place-items:center;color:var(--vk-orange-deep);
+}
+.vk-thumb-play i svg{width:17px;height:17px;margin-left:2px}
+.vk-card-body{padding:18px 20px 20px;display:flex;flex-direction:column;gap:9px;flex:1}
+.vk-card-body h3{font-size:16.5px;line-height:1.45}
+.vk-card-body p{font-size:13.5px;color:var(--vk-ink-soft);line-height:1.75;flex:1}
+.vk-card-meta{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:12.5px;color:var(--vk-ink-soft)}
+.vk-author-mini{display:flex;align-items:center;gap:8px}
+.vk-avatar{
+  width:28px;height:28px;border-radius:50%;flex-shrink:0;
+  display:grid;place-items:center;font-size:12px;font-weight:700;color:#fff;
+}
+.vk-actions{display:flex;gap:8px;margin-left:auto}
+.vk-act{
+  display:inline-flex;align-items:center;gap:4px;font-size:12px;color:var(--vk-ink-soft);
+  padding:3px 7px;border-radius:8px;transition:.2s;
+}
+.vk-act:hover{background:var(--vk-cream-2);color:var(--vk-orange-deep)}
+.vk-act svg{width:14px;height:14px}
+.vk-act.is-liked{color:var(--vk-orange-deep);font-weight:700}
+.vk-act.is-saved svg{fill:var(--vk-orange-deep);color:var(--vk-orange-deep)}
+.vk-feature-side{display:grid;gap:16px;align-content:start}
+.vk-card.is-row{flex-direction:row;align-items:stretch}
+.vk-card.is-row .vk-thumb{width:44%;flex-shrink:0;aspect-ratio:auto}
+.vk-card.is-row .vk-card-body{padding:15px 16px;gap:6px}
+.vk-card.is-row .vk-card-body h3{font-size:14.5px}
+.vk-card.is-row .vk-card-body p{font-size:12.5px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+
+/* ---------- 视频流 ---------- */
+.vk-stream{background:linear-gradient(180deg,var(--vk-cream),#fff)}
+.vk-filter-bar{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:26px}
+.vk-chip{
+  font-size:13px;padding:7px 16px;border-radius:999px;border:1px solid var(--vk-line);
+  background:#fff;color:var(--vk-ink-soft);transition:.25s;
+}
+.vk-chip:hover{border-color:var(--vk-orange);color:var(--vk-orange-deep)}
+.vk-chip.is-active{background:var(--vk-orange);border-color:var(--vk-orange);color:#fff;font-weight:600;box-shadow:0 10px 20px -12px rgba(226,80,28,.9)}
+.vk-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.vk-empty-note{
+  display:none;background:#fff;border:1px dashed rgba(255,107,53,.5);border-radius:14px;
+  padding:22px;text-align:center;color:var(--vk-ink-soft);font-size:14px;
+}
+.vk-empty-note.is-show{display:block}
+
+/* ---------- 专题 ---------- */
+.vk-topic-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.vk-topic{
+  position:relative;border-radius:var(--vk-radius);overflow:hidden;
+  min-height:250px;display:flex;flex-direction:column;justify-content:flex-end;
+  padding:24px;color:#fff;border:1px solid rgba(0,0,0,.06);
+}
+.vk-topic:first-child{grid-column:span 2;min-height:300px}
+.vk-topic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.vk-topic::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,10,4,.08),rgba(20,10,4,.82));z-index:1}
+.vk-topic>*{position:relative;z-index:2}
+.vk-topic .vk-topic-state{
+  align-self:flex-start;font-size:11.5px;font-weight:700;letter-spacing:.5px;
+  border-radius:999px;padding:4px 11px;margin-bottom:11px;
+  background:rgba(255,179,71,.95);color:#3a2a20;
+}
+.vk-topic .vk-topic-state.is-going{background:rgba(255,255,255,.24);color:#fff;border:1px solid rgba(255,255,255,.5)}
+.vk-topic h3{font-size:19px;line-height:1.4;margin-bottom:7px}
+.vk-topic p{font-size:13px;color:rgba(255,247,239,.82);line-height:1.7;max-width:440px}
+
+/* ---------- 创作者 ---------- */
+.vk-creators{background:#2f241d;color:#fff;position:relative;overflow:hidden}
+.vk-creators::before{
+  content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,107,53,.3),transparent 68%);
+}
+.vk-creators .vk-sec-head p{color:rgba(255,247,239,.7)}
+.vk-creators .vk-eyebrow{color:var(--vk-amber)}
+.vk-creator-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;position:relative;z-index:2}
+.vk-creator{
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);
+  border-radius:16px;padding:22px;transition:.3s;text-align:left;
+}
+.vk-creator:hover{background:rgba(255,255,255,.11);transform:translateY(-4px);border-color:rgba(255,179,71,.5)}
+.vk-creator-avatar{
+  width:56px;height:56px;border-radius:17px;display:grid;place-items:center;
+  font-size:21px;font-weight:800;color:#fff;margin-bottom:14px;
+}
+.vk-creator h3{font-size:16px;margin-bottom:4px}
+.vk-creator .vk-creator-field{font-size:12px;color:var(--vk-amber);letter-spacing:.6px;margin-bottom:10px}
+.vk-creator p{font-size:12.5px;color:rgba(255,247,239,.7);line-height:1.7;min-height:44px}
+.vk-creator-stats{display:flex;gap:14px;margin-top:14px;padding-top:12px;border-top:1px solid rgba(255,255,255,.14)}
+.vk-creator-stats b{display:block;font-size:15px;color:#fff}
+.vk-creator-stats span{font-size:11px;color:rgba(255,247,239,.6)}
+.vk-creator-more{margin-top:26px;text-align:center;position:relative;z-index:2}
+
+/* ---------- 影像墙 ---------- */
+.vk-wall-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:150px;gap:14px;
+}
+.vk-wall-item{
+  position:relative;border-radius:14px;overflow:hidden;border:1px solid var(--vk-line);
+  transition:.35s;
+}
+.vk-wall-item img{width:100%;height:100%;object-fit:cover;transition:.5s}
+.vk-wall-item:hover img{transform:scale(1.07)}
+.vk-wall-item.big{grid-column:span 2;grid-row:span 2}
+.vk-wall-item.wide{grid-column:span 2}
+.vk-wall-item.tall{grid-row:span 2}
+.vk-wall-item span{
+  position:absolute;left:0;right:0;bottom:0;padding:22px 14px 12px;
+  font-size:12.5px;color:#fff;
+  background:linear-gradient(180deg,transparent,rgba(20,10,4,.82));
+  opacity:0;transform:translateY(6px);transition:.3s;
+}
+.vk-wall-item:hover span{opacity:1;transform:none}
+
+/* ---------- 随笔 ---------- */
+.vk-essay-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.vk-essay{
+  background:#fff;border:1px solid var(--vk-line);border-radius:var(--vk-radius);
+  padding:26px;display:flex;flex-direction:column;gap:12px;transition:.3s;
+}
+.vk-essay:hover{box-shadow:var(--vk-shadow);transform:translateY(-3px)}
+.vk-essay .vk-essay-date{font-size:12px;letter-spacing:1px;color:var(--vk-orange-deep);font-weight:700}
+.vk-essay h3{font-size:17px;line-height:1.5}
+.vk-essay p{font-size:13.5px;color:var(--vk-ink-soft);line-height:1.85;flex:1}
+.vk-essay .vk-essay-sign{font-size:12.5px;color:var(--vk-ink-soft);border-top:1px dashed var(--vk-line);padding-top:12px}
+
+/* ---------- 评价 ---------- */
+.vk-review-section{background:linear-gradient(180deg,#fff,var(--vk-cream-2))}
+.vk-review-grid{columns:3;column-gap:20px}
+.vk-review{
+  break-inside:avoid;background:#fff;border:1px solid var(--vk-line);
+  border-radius:16px;padding:20px;margin-bottom:18px;
+  display:inline-block;width:100%;
+}
+.vk-review-head{display:flex;align-items:center;gap:10px;margin-bottom:11px}
+.vk-review-head b{font-size:13.5px}
+.vk-review-head small{color:var(--vk-ink-soft);font-size:11.5px;display:block}
+.vk-stars{color:var(--vk-orange);font-size:12.5px;letter-spacing:1px;margin-bottom:8px}
+.vk-review p{font-size:13.5px;color:var(--vk-ink-soft);line-height:1.8}
+
+/* ---------- 创作灵感 ---------- */
+.vk-ideas{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.vk-idea{
+  border-radius:var(--vk-radius);padding:24px;border:1px solid var(--vk-line);background:#fff;
+  display:flex;flex-direction:column;gap:10px;
+}
+.vk-idea-icon{
+  width:44px;height:44px;border-radius:13px;display:grid;place-items:center;
+  background:var(--vk-cream-2);color:var(--vk-orange-deep);
+}
+.vk-idea-icon svg{width:21px;height:21px}
+.vk-idea h3{font-size:16px}
+.vk-idea p{font-size:13.5px;color:var(--vk-ink-soft);line-height:1.8;flex:1}
+.vk-idea ul{display:grid;gap:6px}
+.vk-idea li{font-size:12.5px;color:var(--vk-ink-soft);padding-left:15px;position:relative}
+.vk-idea li::before{content:"›";position:absolute;left:2px;color:var(--vk-orange);font-weight:700}
+
+/* ---------- 动态 + FAQ ---------- */
+.vk-split{display:grid;grid-template-columns:1fr 1.1fr;gap:44px;align-items:start}
+.vk-timeline{position:relative;padding-left:24px}
+.vk-timeline::before{content:"";position:absolute;left:6px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--vk-orange),rgba(255,179,71,.2))}
+.vk-timeline-item{position:relative;padding-bottom:22px}
+.vk-timeline-item:last-child{padding-bottom:0}
+.vk-timeline-item::before{
+  content:"";position:absolute;left:-23px;top:7px;width:11px;height:11px;border-radius:50%;
+  background:#fff;border:2.5px solid var(--vk-orange);
+}
+.vk-timeline-item time{font-size:12px;color:var(--vk-orange-deep);font-weight:700;letter-spacing:.8px}
+.vk-timeline-item h3{font-size:15px;margin:4px 0 5px}
+.vk-timeline-item p{font-size:13px;color:var(--vk-ink-soft);line-height:1.75}
+.vk-faq{display:grid;gap:10px}
+.vk-faq details{
+  background:#fff;border:1px solid var(--vk-line);border-radius:13px;
+  padding:0 18px;transition:.25s;
+}
+.vk-faq details[open]{border-color:rgba(255,107,53,.45);box-shadow:0 10px 26px -20px rgba(226,80,28,.8)}
+.vk-faq summary{
+  cursor:pointer;list-style:none;font-size:14.5px;font-weight:600;
+  padding:16px 26px 16px 0;position:relative;
+}
+.vk-faq summary::-webkit-details-marker{display:none}
+.vk-faq summary::after{
+  content:"+";position:absolute;right:0;top:50%;transform:translateY(-50%);
+  font-size:19px;color:var(--vk-orange);font-weight:400;transition:.25s;
+}
+.vk-faq details[open] summary::after{content:"–"}
+.vk-faq details p{font-size:13.5px;color:var(--vk-ink-soft);line-height:1.85;padding:0 0 16px}
+
+/* ---------- 联系 / 投稿 ---------- */
+.vk-contact{
+  background:linear-gradient(140deg,#3a2a20,#6b3f1f 70%,#8a4f21);
+  color:#fff;border-radius:24px;padding:52px 44px;
+  display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center;
+}
+.vk-contact h2{font-size:clamp(22px,3vw,30px);margin-bottom:14px;line-height:1.35}
+.vk-contact p{font-size:14.5px;color:rgba(255,247,239,.8);line-height:1.9}
+.vk-contact-info{display:grid;gap:12px;margin-top:22px}
+.vk-contact-info li{font-size:13.5px;color:rgba(255,247,239,.85);display:flex;gap:10px;align-items:flex-start}
+.vk-contact-info svg{width:16px;height:16px;flex-shrink:0;margin-top:5px;color:var(--vk-amber)}
+.vk-contact-actions{display:flex;flex-direction:column;gap:12px}
+.vk-contact-actions .vk-btn{width:100%}
+.vk-contact-actions .vk-btn-ghost{border-color:rgba(255,255,255,.4)}
+
+/* ---------- 页脚 ---------- */
+.vk-footer{background:#241a14;color:rgba(255,247,239,.72);padding:56px 24px 26px;font-size:13.5px}
+.vk-footer-inner{max-width:1240px;margin:0 auto}
+.vk-footer-top{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:36px;padding-bottom:36px;border-bottom:1px solid rgba(255,255,255,.1)}
+.vk-footer-brand .vk-logo-text b{color:#fff}
+.vk-footer-brand .vk-logo-text span{color:rgba(255,247,239,.5)}
+.vk-footer-brand p{margin-top:14px;line-height:1.9;max-width:330px;font-size:13px}
+.vk-footer h4{color:#fff;font-size:14px;margin-bottom:14px;letter-spacing:.6px}
+.vk-footer-col ul{display:grid;gap:9px}
+.vk-footer-col a:hover{color:var(--vk-amber)}
+.vk-footer-bottom{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:22px;font-size:12.5px;color:rgba(255,247,239,.55)}
+.vk-footer-bottom span{line-height:1.8}
+
+/* ---------- 弹窗 / Toast ---------- */
+.vk-modal-mask{
+  position:fixed;inset:0;background:rgba(20,10,4,.6);z-index:200;
+  display:none;align-items:center;justify-content:center;padding:20px;
+}
+.vk-modal-mask.is-open{display:flex}
+.vk-modal{
+  background:#fff;border-radius:20px;max-width:520px;width:100%;
+  padding:32px;position:relative;box-shadow:0 40px 80px -30px rgba(0,0,0,.6);
+  animation:vkPop .28s ease;
+}
+@keyframes vkPop{from{opacity:0;transform:translateY(14px) scale(.98)}to{opacity:1;transform:none}}
+.vk-modal h3{font-size:20px;margin-bottom:10px;padding-right:30px}
+.vk-modal p{font-size:14px;color:var(--vk-ink-soft);line-height:1.85;margin-bottom:16px}
+.vk-modal label{display:block;font-size:13px;font-weight:600;margin:14px 0 6px}
+.vk-modal input,.vk-modal textarea{
+  width:100%;border:1px solid var(--vk-line);border-radius:10px;
+  padding:10px 13px;font-size:13.5px;font-family:inherit;outline:none;transition:.2s;
+  background:var(--vk-cream);
+}
+.vk-modal input:focus,.vk-modal textarea:focus{border-color:var(--vk-orange);background:#fff;box-shadow:0 0 0 4px rgba(255,107,53,.12)}
+.vk-modal-close{
+  position:absolute;right:16px;top:16px;width:32px;height:32px;border-radius:50%;
+  background:var(--vk-cream-2);display:grid;place-items:center;color:var(--vk-ink-soft);
+}
+.vk-modal-close:hover{background:var(--vk-orange);color:#fff}
+.vk-modal-close svg{width:15px;height:15px}
+.vk-modal-foot{display:flex;gap:10px;margin-top:20px}
+.vk-modal-foot .vk-btn{flex:1}
+.vk-share-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:6px}
+.vk-share-row button{
+  flex:1;min-width:96px;border:1px solid var(--vk-line);border-radius:12px;
+  padding:14px 10px;font-size:13px;display:grid;gap:6px;place-items:center;
+  transition:.25s;background:var(--vk-cream);
+}
+.vk-share-row button:hover{border-color:var(--vk-orange);color:var(--vk-orange-deep);background:#fff}
+.vk-toast{
+  position:fixed;left:50%;bottom:34px;transform:translate(-50%,20px);
+  background:#2f241d;color:#fff;font-size:13.5px;padding:12px 22px;border-radius:999px;
+  box-shadow:0 20px 40px -18px rgba(0,0,0,.7);z-index:300;
+  opacity:0;pointer-events:none;transition:.3s;
+}
+.vk-toast.is-show{opacity:1;transform:translate(-50%,0)}
+.vk-to-top{
+  position:fixed;right:22px;bottom:22px;width:46px;height:46px;border-radius:50%;
+  background:var(--vk-orange);color:#fff;display:grid;place-items:center;
+  box-shadow:0 16px 30px -12px rgba(226,80,28,.9);z-index:120;
+  opacity:0;pointer-events:none;transition:.3s;
+}
+.vk-to-top.is-show{opacity:1;pointer-events:auto}
+.vk-to-top:hover{background:var(--vk-orange-deep);transform:translateY(-2px)}
+.vk-to-top svg{width:19px;height:19px}
+
+/* ---------- 响应式 ---------- */
+@media (max-width:1080px){
+  .vk-hero-inner{grid-template-columns:1fr;gap:40px}
+  .vk-about-grid{grid-template-columns:1fr}
+  .vk-about-side{position:static;grid-template-columns:repeat(2,1fr);grid-auto-rows:min-content}
+  .vk-feature-grid{grid-template-columns:1fr}
+  .vk-creator-grid{grid-template-columns:repeat(2,1fr)}
+  .vk-grid-3{grid-template-columns:repeat(2,1fr)}
+  .vk-topic-grid{grid-template-columns:repeat(2,1fr)}
+  .vk-topic:first-child{grid-column:span 2}
+  .vk-review-grid{columns:2}
+  .vk-essay-grid,.vk-ideas{grid-template-columns:repeat(2,1fr)}
+  .vk-split{grid-template-columns:1fr;gap:34px}
+  .vk-footer-top{grid-template-columns:1fr 1fr}
+  .vk-contact{grid-template-columns:1fr;padding:40px 28px}
+}
+@media (max-width:860px){
+  .vk-nav-toggle{display:grid}
+  .vk-nav{
+    position:absolute;left:0;right:0;top:100%;
+    background:#fff;flex-direction:column;gap:2px;
+    padding:14px 20px 20px;border-bottom:1px solid var(--vk-line);
+    box-shadow:0 24px 40px -28px rgba(47,36,29,.5);
+    display:none;
+  }
+  .vk-nav.is-open{display:flex}
+  .vk-nav a{padding:11px 12px;border-radius:10px;font-size:15px}
+  .vk-search input{width:140px}
+  .vk-search input:focus{width:170px}
+  .vk-header-tools{margin-left:auto}
+}
+@media (max-width:720px){
+  .vk-section{padding:56px 18px}
+  .vk-hero-inner{padding:48px 18px 66px}
+  .vk-hero-stats{grid-template-columns:1fr 1fr}
+  .vk-hero-float{display:none}
+  .vk-grid-3,.vk-essay-grid,.vk-ideas,.vk-topic-grid{grid-template-columns:1fr}
+  .vk-topic:first-child{grid-column:span 1}
+  .vk-creator-grid{grid-template-columns:1fr}
+  .vk-review-grid{columns:1}
+  .vk-highlight-grid{grid-template-columns:1fr}
+  .vk-about-side{grid-template-columns:1fr}
+  .vk-wall-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:130px}
+  .vk-wall-item.big{grid-column:span 2;grid-row:span 1}
+  .vk-card.is-row{flex-direction:column}
+  .vk-card.is-row .vk-thumb{width:100%;aspect-ratio:16/9}
+  .vk-footer-top{grid-template-columns:1fr;gap:26px}
+  .vk-contact-actions{flex-direction:column}
+  .vk-header-inner{gap:12px;padding:10px 16px}
+  .vk-hero-cover-meta h3{font-size:14px}
+  .vk-notice{font-size:12px;gap:8px;padding:8px 12px}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<div class="vk-sticky-wrap">
+  <div class="vk-notice">
+    <strong>官方发布</strong>
+    <span>「挠痒痒实验室」第二季 11 月 18 日上线，新增 12 支原创解压短片，欢迎前往专题页查看。</span>
+    <a href="#vk-topic">查看专题 ›</a>
+  </div>
+
+  <header class="vk-header">
+    <div class="vk-header-inner">
+      <a class="vk-logo" href="#vk-hero" aria-label="VK挠痒痒官方网站首页">
+        <span class="vk-logo-mark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5v14l8-7z"/><path d="M14 6v12"/><path d="M18 9v6"/></svg>
+        </span>
+        <span class="vk-logo-text">
+          <b>VK挠痒痒</b>
+          <span>VK TICKLE</span>
+        </span>
+      </a>
+
+      <button class="vk-nav-toggle" id="vkNavToggle" aria-label="展开导航菜单" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+
+      <nav class="vk-nav" id="vkNav" aria-label="主导航">
+        <a href="#vk-hero" class="is-active">首页</a>
+        <a href="#vk-feature">视频焦点</a>
+        <a href="#vk-topic">专题企划</a>
+        <a href="#vk-creator">创作者</a>
+        <a href="#vk-wall">影像墙</a>
+        <a href="#vk-news">企业动态</a>
+        <a href="#vk-faq">帮助中心</a>
+        <a href="#vk-contact">联系我们</a>
+      </nav>
+
+      <div class="vk-header-tools">
+        <div class="vk-search">
+          <input type="search" id="vkSearchInput" placeholder="搜索视频、专题或创作者" aria-label="站内搜索">
+          <button type="button" id="vkSearchBtn" aria-label="执行搜索">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6"/></svg>
+          </button>
+          <div class="vk-search-feedback" id="vkSearchFeedback"></div>
+        </div>
+      </div>
+    </div>
+  </header>
+</div>
+
+<main>
+
+  <!-- 首屏 -->
+  <section class="vk-hero" id="vk-hero">
+    <div class="vk-hero-inner">
+      <div>
+        <span class="vk-hero-badge"><i></i>VK挠痒痒官方网站 · 原创欢乐影像品牌</span>
+        <h1>VK挠痒痒</h1>
+        <p class="vk-hero-lead">把生活里那些让人忍不住笑出声的瞬间，拍成可以被反复观看的影像。这里是 VK挠痒痒官方网站，一个专注轻松解压与欢乐互动的原创视频品牌。</p>
+        <p class="vk-hero-intro">作为深耕解压与欢乐内容垂直领域的视频品牌，我们持续运营以真实、温暖、有趣为核心的内容生态，让每一次播放都成为一次放松。</p>
+        <div class="vk-hero-actions">
+          <a class="vk-btn vk-btn-primary" href="#vk-feature">查看品牌焦点</a>
+          <a class="vk-btn vk-btn-ghost" href="#vk-contact">加入创作者计划</a>
+        </div>
+        <div class="vk-hero-stats">
+          <div class="vk-stat"><b data-vk-count="1860">1860</b><span>原创短片累计</span></div>
+          <div class="vk-stat"><b data-vk-count="42">42</b><span>签约创作者（位）</span></div>
+          <div class="vk-stat"><b data-vk-count="96">96</b><span>用户口碑好评率（%）</span></div>
+        </div>
+      </div>
+
+      <div class="vk-hero-visual">
+        <div class="vk-hero-cover">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Cdefs%3E%3ClinearGradient id='g1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23ff8a4c'/%3E%3Cstop offset='.55' stop-color='%23e2501c'/%3E%3Cstop offset='1' stop-color='%233a2a20'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='450' fill='url(%23g1)'/%3E%3Cg fill='none' stroke='%23ffe2b8' stroke-opacity='.55' stroke-width='2'%3E%3Ccircle cx='620' cy='120' r='54'/%3E%3Ccircle cx='620' cy='120' r='78' stroke-opacity='.28'/%3E%3Cpath d='M60 380c60-90 130-70 180 0'/%3E%3Cpath d='M300 420c40-120 160-140 220-30'/%3E%3C/g%3E%3Cg fill='%23fff7ef'%3E%3Ccircle cx='268' cy='196' r='46'/%3E%3Cpath d='M170 330c16-70 58-100 98-100s82 30 98 100z'/%3E%3Ccircle cx='252' cy='188' r='6' fill='%23e2501c'/%3E%3Ccircle cx='284' cy='188' r='6' fill='%23e2501c'/%3E%3Cpath d='M252 212q16 14 32 0' stroke='%23e2501c' stroke-width='5' fill='none' stroke-linecap='round'/%3E%3C/g%3E%3Cg fill='%23ffb347'%3E%3Ccircle cx='560' cy='300' r='14'/%3E%3Ccircle cx='520' cy='256' r='8'/%3E%3Ccircle cx='600' cy='248' r='10'/%3E%3C/g%3E%3C/svg%3E" alt="VK挠痒痒品牌主视觉：橙色渐变背景下的人物笑脸与欢笑影像氛围">
+          <span class="vk-hero-cover-tag">品牌主视觉</span>
+          <div class="vk-play">
+            <button class="vk-play-btn" type="button" data-vk-open="share" aria-label="播放品牌主视觉短片">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+          </div>
+          <div class="vk-hero-cover-meta">
+            <h3>VK挠痒痒 · 品牌形象短片《笑声从哪里来》</h3>
+            <span>04:12 / 官方出品</span>
+          </div>
+        </div>
+        <div class="vk-hero-float">
+          <span class="dot">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/></svg>
+          </span>
+          <span>
+            <b>本周新增 36 支</b>
+            <small>原创解压短片持续更新中</small>
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 品牌深度解析 -->
+  <section class="vk-section vk-about" id="vk-about">
+    <div class="vk-sec-head">
+      <span class="vk-eyebrow">品牌解析</span>
+      <h2>关于 VK挠痒痒：一个把快乐做成内容的视频品牌</h2>
+      <p>从一支手机短片开始，到今天的多栏目内容矩阵，我们始终相信：轻松与真实，本身就是一种力量。</p>
+    </div>
+
+    <div class="vk-about-grid">
+      <div class="vk-about-copy">
+        <p><strong>VK挠痒痒</strong>是一个以“欢乐影像”为核心定位的原创视频品牌。品牌名里的“挠痒痒”，不是某一个具体的动作，而是一种生活态度——那些让人猝不及防笑出来的瞬间，往往藏在最平常的日常里：朋友之间的一句调侃，宠物突然的歪头，厨房里翻车的第十次尝试，或者一场突如其来的大雨里两个人共享的一把伞。我们把这些瞬间收集起来，用专业的方式记录，用真诚的态度呈现，做成一支支可以被反复观看的短片。</p>
+
+        <p>作为 VK挠痒痒官方网站，这个页面承载的不只是播放列表，而是一整套内容生态：品牌自制的栏目、签约创作者的日常更新、用户上传的投稿作品、专题企划的共同创作，以及围绕“解压”与“陪伴”展开的社区互动。我们不做夸张的标题，不追逐短期的热度，而是持续运营有品质的精品内容，让每一位来到这里的用户都能找到适合自己的那几分钟放松时光。</p>
+
+        <h3>为什么是“挠痒痒”</h3>
+        <p>在内容行业里，“挠痒痒”是一个很特别的动作：它不制造伤害，不制造焦虑，只是轻轻触碰，就能让人忍不住笑。我们把这个动作理解为内容与观众之间最好的关系——不强行灌输，不刻意煽情，而是用恰到好处的创意，轻轻触碰观众的情绪。这种理念贯穿在我们所有的栏目设计、选题策划和剪辑节奏里，也构成了品牌最核心的辨识度。</p>
+
+        <p>从行业角度看，解压与欢乐类内容正处在持续增长的阶段。快节奏的生活让“被逗笑”变成一种刚需，而真正有品质的欢乐内容，需要专业的策划、稳定的更新和真诚的表达。VK挠痒痒选择深耕这一垂直领域，用企业级的制作标准要求每一支短片：画面要高清，节奏要舒适，情绪要真实。我们希望成为用户首选的解压内容品牌，也希望成为创作者值得信赖的合作平台。</p>
+
+        <h3>我们的内容方法论</h3>
+        <p>第一，真实优先。所有品牌自制内容都来自真实的生活观察，我们拒绝为了效果而设计的尴尬桥段。第二，节奏克制。一支好的解压短片不是笑点堆砌，而是有呼吸感的叙事，所以我们会在剪辑上留白，让观众有时间会心一笑。第三，多元包容。欢乐没有标准答案，有人喜欢萌宠，有人喜欢手作翻车，有人喜欢城市里的荒诞瞬间，我们的内容矩阵覆盖多个题材方向，让不同偏好的人都能找到共鸣。</p>
+
+        <p>第四，社区共建。VK挠痒痒的很大一部分内容来自用户投稿与创作者共创，我们提供选题建议、剪辑思路与官方发布渠道，让好的创意被更多人看见。第五，长期主义。品牌从创立之初就确定了持续运营的路线，不追求一次爆发，而是通过稳定的栏目更新、季度专题企划与年度创作者大会，逐步积累口碑与影响力。这也是我们理解的社会责任：在信息过载的时代，提供真正让人放松的内容。</p>
+
+        <div class="vk-highlight-grid">
+          <div class="vk-highlight"><b>原创自制栏目</b><span>《挠痒痒实验室》《三分钟笑场》《城市荒诞观察》等 6 档常驻栏目，固定节奏更新。</span></div>
+          <div class="vk-highlight"><b>创作者共创计划</b><span>开放投稿与签约双通道，为创作者提供选题、拍摄与分发支持。</span></div>
+          <div class="vk-highlight"><b>企业级制作标准</b><span>全流程高清制作，画面、声音、字幕均按品牌规范执行。</span></div>
+          <div class="vk-highlight"><b>社区温度运营</b><span>评论区真实互动，定期发起话题挑战与用户投票，保持社区活力。</span></div>
+        </div>
+
+        <h3>品牌愿景与长期方向</h3>
+        <p>未来，VK挠痒痒会继续围绕“解压 + 陪伴”两个关键词展开：一方面扩充自制栏目矩阵，尝试更多元的影像表达形式；另一方面深化创作者生态，把投稿、共创、孵化做成一条完整的成长路径。我们也计划与更多生活方式品牌、线下空间展开合作，让欢乐影像走出屏幕，进入真实的生活场景。无论形式如何变化，初心不变——做真实、温暖、有品质的欢乐内容。</p>
+
+        <p>如果你也认同这样的理念，欢迎通过页面底部的联系方式与我们取得联系，无论是投稿、合作还是建议，我们都愿意认真阅读。VK挠痒痒官方网站会持续更新品牌动态与内容上新，欢迎常回来看看。</p>
+      </div>
+
+      <aside class="vk-about-side">
+        <div class="vk-side-card dark">
+          <h3>品牌速览</h3>
+          <p>VK挠痒痒，专注解压与欢乐互动的原创视频品牌，以真实、温暖、有趣为内容底色。</p>
+          <ul class="vk-side-list">
+            <li><span>成立时间</span><b>2019 年</b></li>
+            <li><span>内容方向</span><b>解压 / 欢乐 / 生活</b></li>
+            <li><span>常驻栏目</span><b>6 档</b></li>
+            <li><span>更新频率</span><b>每周 3 更</b></li>
+            <li><span>合作模式</span><b>投稿 / 签约 / 联创</b></li>
+          </ul>
+        </div>
+        <div class="vk-side-card">
+          <h3>我们的内容标签</h3>
+          <div class="vk-filter-bar" style="margin:0">
+            <span class="vk-chip is-active">解压短片</span>
+            <span class="vk-chip">日常记录</span>
+            <span class="vk-chip">萌宠日常</span>
+            <span class="vk-chip">手作翻车</span>
+            <span class="vk-chip">城市探索</span>
+            <span class="vk-chip">创作者幕后</span>
+          </div>
+        </div>
+        <div class="vk-side-card">
+          <h3>官方合作通道</h3>
+          <p>品牌联名、内容共创、线下活动与媒体采访，均可通过官方邮箱沟通。我们会在 3 个工作日内回复。</p>
+          <a class="vk-btn vk-btn-outline" href="#vk-contact" style="margin-top:14px;width:100%">查看合作方式</a>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 焦点视频 -->
+  <section class="vk-section" id="vk-feature">
+    <div class="vk-sec-head">
+      <span class="vk-eyebrow">视频焦点</span>
+      <h2>本周焦点：值得完整看完的几支短片</h2>
+      <p>由品牌编辑部精选，覆盖解压、观察与幕后三个方向，每支都值得一个安静的几分钟。</p>
+    </div>
+
+    <div class="vk-feature-grid">
+      <article class="vk-card">
+        <div class="vk-thumb">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Cdefs%3E%3ClinearGradient id='f1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23fff3e0'/%3E%3Cstop offset='1' stop-color='%23ffb347'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='450' fill='url(%23f1)'/%3E%3Cg fill='%23e2501c' opacity='.85'%3E%3Ccircle cx='210' cy='200' r='70'/%3E%3Crect x='380' y='120' width='150' height='190' rx='26'/%3E%3C/g%3E%3Cg fill='%23fff7ef'%3E%3Ccircle cx='190' cy='182' r='9'/%3E%3Ccircle cx='232' cy='182' r='9'/%3E%3Cpath d='M186 226q24 20 48 0' stroke='%23fff7ef' stroke-width='7' fill='none' stroke-linecap='round'/%3E%3Crect x='405' y='160' width='100' height='12' rx='6'/%3E%3Crect x='405' y='192' width='76' height='12' rx='6'/%3E%3Crect x='405' y='224' width='88' height='12' rx='6'/%3E%3C/g%3E%3Cg stroke='%23e2501c' stroke-width='4' fill='none' stroke-linecap='round' opacity='.7'%3E%3Cpath d='M600 150q40 40 0 80'/%3E%3Cpath d='M640 120q70 70 0 140'/%3E%3C/g%3E%3C/svg%3E" alt="焦点短片《三分钟笑场》封面：暖色背景中的笑脸与字幕板元素">
+          <span class="vk-badge-tag">品牌自制</span>
+          <span class="vk-dur">05:48</span>
+          <div class="vk-thumb-play"><i><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></i></div>
+        </div>
+        <div class="vk-card-body">
+          <h3>《三分钟笑场》第 27 期：当办公室的打印机开始讲冷笑话</h3>
+          <p>本期我们把镜头对准最日常的办公场景，用三分钟记录一组让人忍不住笑出声的突发事件。没有剧本，只有真实反应，看完据说能让周一没那么难熬。</p>
+          <div class="vk-card-meta">
+            <span class="vk-author-mini"><span class="vk-avatar" style="background:#e2501c">V</span>VK挠痒痒官方</span>
+            <div class="vk-actions">
+              <button class="vk-act" data-vk-like aria-label="点赞"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 10v10H4V10zM7 10l4-6a2 2 0 013 2l-1 4h4a2 2 0 012 2l-1 5a2 2 0 01-2 2H7"/></svg><span data-vk-like-num>1286</span></button>
+              <button class="vk-act" data-vk-save aria-label="收藏"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20s-7-4.6-7-9.5A4.5 4.5 0 0112 7a4.5 4.5 0 017 3.5C19 15.4 12 20 12 20z"/></svg></button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <div class="vk-feature-side">
+        <article class="vk-card is-row">
+          <div class="vk-thumb">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%233f6b5e'/%3E%3Cg fill='%23d9f0e3'%3E%3Ccircle cx='120' cy='110' r='34'/%3E%3Cpath d='M66 210c10-46 30-64 54-64s44 18 54 64z'/%3E%3C/g%3E%3Cg fill='%23ffb347'%3E%3Ccircle cx='290' cy='100' r='18'/%3E%3Crect x='250' y='160' width='90' height='14' rx='7'/%3E%3Crect x='250' y='190' width='64' height='14' rx='7'/%3E%3C/g%3E%3Cpath d='M0 260h400' stroke='%23d9f0e3' stroke-opacity='.4' stroke-width='2'/%3E%3C/svg%3E" alt="《城市荒诞观察》封面：绿色背景中的行人与城市街道图形">
+            <span class="vk-dur">07:12</span>
+          </div>
+          <div class="vk-card-body">
+            <h3>《城市荒诞观察》第 9 站：早高峰地铁里的十种表情</h3>
+            <p>用镜头记录通勤路上那些微妙的、无法言说的小表情。</p>
+            <div class="vk-card-meta">
+              <span class="vk-author-mini"><span class="vk-avatar" style="background:#3f6b5e">舟</span>舟行记</span>
+              <div class="vk-actions">
+                <button class="vk-act" data-vk-like aria-label="点赞"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 10v10H4V10zM7 10l4-6a2 2 0 013 2l-1 4h4a2 2 0 012 2l-1 5a2 2 0 01-2 2H7"/></svg><span data-vk-like-num>842</span></button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="vk-card is-row">
+          <div class="vk-thumb">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%235b4b8a'/%3E%3Cg fill='%23e6d9ff'%3E%3Crect x='70' y='80' width='120' height='150' rx='14'/%3E%3Crect x='220' y='120' width='110' height='90' rx='12'/%3E%3C/g%3E%3Cg fill='%23ffb347'%3E%3Ccircle cx='130' cy='140' r='20'/%3E%3Cpath d='M108 200q22-24 44 0' stroke='%23ffb347' stroke-width='6' fill='none' stroke-linecap='round'/%3E%3C/g%3E%3Cg stroke='%23e6d9ff' stroke-width='3' fill='none' opacity='.6'%3E%3Cpath d='M220 60h130M220 80h90'/%3E%3C/g%3E%3C/svg%3E" alt="《挠痒痒实验室》封面：紫色背景中的实验器皿与手作道具">
+            <span class="vk-dur">09:36</span>
+          </div>
+          <div class="vk-card-body">
+            <h3>《挠痒痒实验室》第 14 期：手工翻车现场全记录</h3>
+            <p>本期实验三次翻车，但我们坚持把失败也剪进来。</p>
+            <div class="vk-card-meta">
+              <span class="vk-author-mini"><span class="vk-avatar" style="background:#5b4b8a">阿</span>阿木手作</span>
+              <div class="vk-actions">
+                <button class="vk-act" data-vk-like aria-label="点赞"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 10v10H4V10zM7 10l4-6a2 2 0 013 2l-1 4h4a2 2 0 012 2l-1 5a2 2 0 01-2 2H7"/></svg><span data-vk-like-num>654</span></button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="vk-card is-row">
+          <div class="vk-thumb">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%232c3f52'/%3E%3Cg fill='%23a9d8ff' opacity='.9'%3E%3Ccircle cx='90' cy='80' r='30'/%3E%3Ccircle cx='300' cy='220' r='46'/%3E%3C/g%3E%3Cg fill='%23fff7ef'%3E%3Ccircle cx='200' cy='140' r='52'/%3E%3Ccircle cx='310' cy='100' r='26'/%3E%3C/g%3E%3Cg fill='%232c3f52'%3E%3Ccircle cx='184' cy='132' r='7'/%3E%3Ccircle cx='216' cy='132' r='7'/%3E%3Cpath d='M182 162q18 16 36 0' stroke='%232c3f52' stroke-width='6' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='303' cy='94' r='4'/%3E%3Ccircle cx='317' cy='94' r='4'/%3E%3C/g%3E%3C/svg%3E" alt="《萌宠歪头杀》封面：深蓝背景中的猫咪与月亮图形">
+            <span class="vk-dur">03:05</span>
+          </div>
+          <div class="vk-card-body">
+            <h3>《萌宠歪头杀》第 31 期：一只猫听见开罐头的瞬间</h3>
+            <p>三分钟纯治愈，建议在需要放松的间隙打开。</p>
+            <div class="vk-card-meta">
+              <span class="vk-author-mini"><span class="vk-avatar" style="background:#2c3f52">豆</span>豆腐日常</span>
+              <div class="vk-actions">
+                <button class="vk-act" data-vk-like aria-label="点赞"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 10v10H4V10zM7 10l4-6a2 2 0 013 2l-1 4h4a2 2 0 012 2l-1 5a2 2 0 01-2 2H7"/></svg><span data-vk-like-num>2103</span></button>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 视频流 -->
+  <section class="vk-section vk-stream" id="vk-stream">
+    <div class="vk-sec-head">
+      <span class="vk-eyebrow">热门视频流</span>
+      <h2>正在被反复播放的原创内容</h2>
+      <p>按题材筛选你感兴趣的方向，每一支都来自官方与创作者的共同出品。</p>
+    </div>
+
+    <div class="vk-filter-bar" id="vkFilterBar">
+      <button class="vk-chip is-active" data-vk-filter="all">全部</button>
+      <button class="vk-chip" data-vk-filter="解压">解压</button>
+      <button class="vk-chip" data-vk-filter="日常">日常记录</button>
+      <button class="vk-chip" data-vk-filter="萌宠">萌宠</button>
+      <button class="vk-chip" data-vk-filter="手作">手作</button>
+      <button class="vk-chip" data-vk-filter="城市">城市探索</button>
+    </div>
+
+    <div class="vk-grid-3" id="vkStreamGrid">
+      <article class="vk-card" data-vk-tag="解压">
+        <div class="vk-thumb">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 225'%3E%3Crect width='400' height='225' fill='%23ff8a4c'/%3E%3Cg fill='%23fff7ef'%3E%3Ccircle cx='110' cy='100' r='34'/%3E%3Cpath d='M64 190c8-42 28-58 46-58s38 16 46 58z'/%3E%3C/g%3E%3Cg fill='%23e2501c'%3E%3Ccircle cx='100' cy='94' r='5'/%3E%3Ccircle cx='122' cy='94' r='5'/%3E%3C/g%3E%3Cg stroke='%23fff7ef' stroke-width='4' fill='none' stroke-linecap='round'%3E%3Cpath d='M250 80q34 32 0 64'/%3E%3Cpath d='M290 56q56 56 0 112'/%3E%3C/g%3E%3C/svg%3E" alt="《十秒钟笑出声》封面：橙色背景中的笑脸与声波图形">
+          <span class="vk-badge-tag">解压</span><span class="vk-dur">02:18</span>
+        </div>
+        <div class="vk-card-body">
+          <h3>《十秒钟笑出声》合集：本周被点播最多的十个瞬间</h3>
+          <p>从两百多支投稿里挑出的十段真实反应，短、快、不设防。</p>
+          <div class="vk-card-meta">
+            <span class="vk-author-mini"><span class="vk-avatar" style="background:#e2501c">V</span>VK挠痒痒官方</span>
+            <div class="vk-actions">
+              <button class="vk-act" data-vk-like aria-label="点赞"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 10v10H4V10zM7 10l4-6a2 2 0 013 2l-1 4h4a2 2 0 012 2l-1 5a2 2 0 01-2 2H7"/></svg><span data-vk-like-num>976</span></button>
+              <button class="vk-act" data-vk-save aria-label="收藏"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20s-7-4.6-7-9.5A4.5 4.5 0 0112 7a4.5 4.5 0 017 3.5C19 15.4 12 20 12 20z"/></svg></button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="vk-card" data-vk-tag="日常">
+        <div class="vk-thumb">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 225'%3E%3Crect width='400' height='225' fill='%23f4d6a8'/%3E%3Cg fill='%23b5743a'%3E%3Crect x='50' y='120' width='130' height='70' rx='8'/%3E%3Crect x='210' y='90' width='140' height='100' rx='8'/%3E%3C/g%3E%3Cg fill='%23fff7ef'%3E%3Ccircle cx='120' cy='70' r='26'/%3E%3Ccircle cx='280' cy='52' r='20'/%3E%3C/g%3E%3Cg stroke='%23b5743a' stroke-width='3' fill='none' opacity='.6'%3E%3Cpath d='M0 200h400'/%3E%3C/g%3E%3C/svg%3E" alt="《我的一天从一杯咖啡开始》封面：米色背景中的咖啡杯与桌面">
+          <span class="vk-badge-tag">日常</span><span class="vk-dur">06:40</span>
+        </div>
+        <div class="vk-card-body">
+          <h3>《我的一天从一杯咖啡开始》：手冲的第三十七次练习</h3>
+          <p>没有教程味，只是记录一个普通早晨的重复动作。</p>
+          <div class="vk-card-meta">
+            <span class="vk-author-mini"><span class="vk-avatar" style="background:#b5743a">林</span>林间慢记</span>
+            <div class="vk-actions">
+              <button class="vk-act" data-vk-like aria-label="点赞"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 10v10H4V10zM7 10l4-6a2 2 0 013 2l-1 4h4a2 2 0 012 2l-1 5a2 2 0 01-2 2H7"/></svg><span data-vk-like-num>588</span></button>
+              <button class="vk-act" data-vk-save aria-label="收藏"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20s-7-4.6-7-9.5A4.5 4.5 0 0112 7a4.5 4.5 0 017 3.5C19 15.4 12 20 12 20z"/></svg></button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="vk-card" data-vk-tag="萌宠">
+        <div class="vk-thumb">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 225'%3E%3Crect width='400' height='225' fill='%233f6b5e'/%3E%3Cg fill='%23f6e7c1'%3E%3Ccircle cx='140' cy='110' r='44'/%3E%3Ccircle cx='270' cy='140' r='30'/%3E%3C/g%3E%3Cg fill='%232c4a40'%3E%3Ccircle cx='124' cy='100' r='6'/%3E%3Ccircle cx='156' cy='100' r='6'/%3E%3Cpath d='M122 128q18 14 36 0' stroke='%232c4a40' stroke-width='5' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='262' cy='134' r='4'/%3E%3Ccircle cx='278' cy='134' r='4'/%3E%3C/g%3E%3Cg stroke='%23f6e7c1' stroke-width='3' fill='none' opacity='.5'%3E%3Cpath d='M40 200q40-30 80 0'/%3E%3C/g%3E%3C/svg%3E" alt="《猫在窗台上的一天》封面：绿色背景中的猫与窗台图形">
+          <span class="vk-badge-tag">萌宠</span><span class="vk-dur">04:26</span>
+        </div>
+        <div class="vk-card-body">
+          <h3>《猫在窗台上的一天》：什么都没发生，但很好看</h3>
+          <p>一台固定机位，一只猫，一个下午。治愈系数拉满。</p>
+          <div class="vk-card-meta">
+            <span class="vk-author-mini"><span class="vk-avatar" style="background:#3f6b5e">豆</span>豆腐日常</span>
+            <div class="vk-actions">
+              <button class="vk-act" data-vk-like aria-label="点赞"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 10v10H4V10zM7 10l4-6a2 2 0 013 2l-1 4h4a2 2 0 012 2l-1 5a2 2 0 01-2 2H7"/></svg><span data-vk-like-num>1740</span></button>
+              <button class="vk-act" data-vk-save aria-label="收藏"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20s-7-4.6-7-9.5A4.5 4.5 0 0112 7a4.5 4.5 0 017 3.5C19 15.4 12 20 12 20z"/></svg></button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="vk-card" data-vk-tag="手作">
+        <div class="vk-thumb">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 225'%3E%3Crect width='400' height='225' fill='%235b4b8a'/%3E%3Cg fill='%23e6d9ff'%3E%3Crect x='80' y='60' width='90' height='110' rx='10'/%3E%3Crect x='210' y='90' width='110' height='80' rx='10'/%3E%3C/g%3E%3Cg fill='%23ffb347'%3E%3Ccircle cx='125' cy='100' r='16'/%3E%3Cpath d='M105 140q20-18 40 0' stroke='%23ffb347' stroke-width='5' fill='none' stroke-linecap='round'/%3E%3C/g%3E%3Cg stroke='%23e6d9ff' stroke-width='3' fill='none' opacity='.55'%3E%3Ccircle cx='300' cy='60' r='24'/%3E%3C/g%3E%3C/svg%3E" alt="《失败也值得被记录》封面：紫色背景中的手作工具与陶器">
+          <span class="vk-badge-tag">手作</span><span class="vk-dur">08:12</span>
+        </div>
+        <div class="vk-card-body">
+          <h3>《失败也值得被记录》：一件陶器的四次重来</h3>
+          <p>创作者把翻车过程完整剪出来，评论区说这才真实。</p>
+          <div class="vk-card-meta">
+            <span class="vk-author-mini"><span class="vk-avatar" style="background:#5b4b8a">阿</span>阿木手作</span>
+            <div class="vk-actions">
+              <button class="vk-act" data-vk-like aria-label="点赞"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 10v10H4V10zM7 10l4-6a2 2 0 013 2l-1 4h4a2 2 0 012 2l-1 5a2 2 0 01-2 2H7"/></svg><span data-vk-like-num>712</span></button>
+              <button class="vk-act" data-vk-save aria-label="收藏"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20s-7-4.6-7-9.5A4.5 4.5 0 0112 7a4.5 4.5 0 017 3.5C19 15.4 12 20 12 20z"/></svg></button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="vk-card" data-vk-tag="城市">
+        <div class="vk-thumb">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 225'%3E%3Crect width='400' height='225' fill='%232c3f52'/%3E%3Cg fill='%23a9d8ff' opacity='.85'%3E%3Crect x='40' y='90' width='46' height='100'/%3E%3Crect x='100' y='60' width='40' height='130'/%3E%3Crect x='250' y='80' width='50' height='110'/%3E%3Crect x='312' y='110' width='40' height='80'/%3E%3C/g%3E%3Cg fill='%23ffb347'%3E%3Ccircle cx='196' cy='76' r='22'/%3E%3C/g%3E%3Cg stroke='%23fff7ef' stroke-width='2' fill='none' opacity='.4'%3E%3Cpath d='M0 200h400'/%3E%3C/g%3E%3C/svg%3E" alt="《凌晨四点的菜市场》封面：深蓝背景中的城市建筑与路灯">
+          <span class="vk-badge-tag">城市</span><span class="vk-dur">10:05</span>
+        </div>
+        <div class="vk-card-body">
+          <h3>《凌晨四点的菜市场》：城市醒来的前一个小时</h3>
+          <p>跟拍一位摊主的三小时，声音几乎都是现场的。</p>
+          <div class="vk-card-meta">
+            <span class="vk-author-mini"><span class="vk-avatar" style="background:#2c3f52">舟</span>舟行记</span>
+            <div class="vk-actions">
+              <button class="vk-act" data-vk-like aria-label="点赞"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 10v10H4V10zM7 10l4-6a2 2 0 013 2l-1 4h4a2 2 0 012 2l-1 5a2 2 0 01-2 2H7"/></svg><span data-vk-like-num>1325</span></button>
+              <button class="vk-act" data-vk-save aria-label="收藏"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20s-7-4.6-7-9.5A4.5 4.5 0 0112 7a4.5 4.5 0 017 3.5C19 15.4 12 20 12 20z"/></svg></button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="vk-card" data-vk-tag="解压">
+        <div class="vk-thumb">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 225'%3E%3Crect width='400' height='225' fill='%23e2501c'/%3E%3Cg fill='%23ffe2b8'%3E%3Ccircle cx='200' cy='100' r='40'/%3E%3C/g%3E%3Cg fill='%23e2501c'%3E%3Ccircle cx='186' cy='94' r='6'/%3E%3Ccircle cx='214' cy='94' r='6'/%3E%3Cpath d='M184 118q16 16 32 0' stroke='%23e2501c' stroke-width='6' fill='none' stroke-linecap='round'/%3E%3C/g%3E%3Cg stroke='%23ffe2b8' stroke-width='4' fill='none' stroke-linecap='round'%3E%3Cpath d='M80 60l18 18M320 60l-18 18M80 180l18-18M320 180l-18-18'/%3E%3C/g%3E%3C/svg%3E" alt="《笑一下就好了》封面：深橙背景中的大笑脸与放射线条">
+          <span class="vk-badge-tag">解压</span><span class="vk-dur">01:52</span>
+        </div>
+        <div class="vk-card-body">
+          <h3>《笑一下就好了》：给周五晚上的 112 秒</h3>
+          <p>无旁白、无字幕，只有一段让人放松下来的现场声。</p>
+          <div class="vk-card-meta">
+            <span class="vk-author-mini"><span class="vk-avatar" style="background:#e2501c">V</span>VK挠痒痒官方</span>
+            <div class="vk-actions">
+              <button class="vk-act" data-vk-like aria-label="点赞"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 10v10H4V10zM7 10l4-6a2 2 0 013 2l-1 4h4a2 2 0 012 2l-1 5a2 2 0 01-2 2H7"/></svg><span data-vk-like-num>2310</span></button>
+              <button class="vk-act" data-vk-save aria-label="收藏"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20s-7-4.6-7-9.5A4.5 4.5 0 0112 7a4.5 4.5 0 017 3.5C19 15.4 12 20 12 20z"/></svg></button>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="vk-empty-note" id="vkEmptyNote">这个方向的内容正在整理中，先看看其他题材吧。</div>
+  </section>
+
+  <!-- 专题企划 -->
+  <section class="vk-section" id="vk-topic">
+    <div class="vk-sec-head">
+      <span class="vk-eyebrow">专题企划</span>
+      <h2>这一季，我们一起完成几件有趣的事</h2>
+      <p>专题是 VK挠痒痒内容生态里最强调共创的部分，每一个企划都欢迎创作者报名参与。</p>
+    </div>
+
+    <div class="vk-topic-grid">
+      <div class="vk-topic">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 400'%3E%3Crect width='800' height='400' fill='%23ff8a4c'/%3E%3Cg fill='%23fff7ef' opacity='.9'%3E%3Ccircle cx='600' cy='120' r='70'/%3E%3Ccircle cx='180' cy='260' r='50'/%3E%3C/g%3E%3Cg stroke='%23e2501c' stroke-width='5' fill='none' opacity='.7'%3E%3Cpath d='M300 100q80 80 0 160'/%3E%3Cpath d='M380 60q120 120 0 240'/%3E%3C/g%3E%3C/svg%3E" alt="专题「挠痒痒实验室 第二季」封面：橙色背景中的实验与笑脸元素">
+        <span class="vk-topic-state is-going">更新中 · 已上线 12 支</span>
+        <h3>挠痒痒实验室 · 第二季</h3>
+        <p>把生活里的小实验搬进镜头：手工、厨房、通勤、宠物互动。每一期都由创作者提交选题，官方提供制作支持，失败与成功一并保留。</p>
+      </div>
+
+      <div class="vk-topic">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%232c3f52'/%3E%3Cg fill='%23a9d8ff' opacity='.9'%3E%3Crect x='50' y='150' width='60' height='100'/%3E%3Crect x='130' y='110' width='50' height='140'/%3E%3Crect x='250' y='130' width='70' height='120'/%3E%3C/g%3E%3Cg fill='%23ffb347'%3E%3Ccircle cx='200' cy='90' r='26'/%3E%3C/g%3E%3C/svg%3E" alt="专题「城市荒诞观察」封面：深蓝背景中的城市剪影">
+        <span class="vk-topic-state">招募中 · 报名开启</span>
+        <h3>城市荒诞观察 · 第三站</h3>
+        <p>面向所有城市影像创作者公开征集，记录你所在城市里那些让人哭笑不得的瞬间，入选作品将在官方渠道发布。</p>
+      </div>
+
+      <div class="vk-topic">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%233f6b5e'/%3E%3Cg fill='%23f6e7c1'%3E%3Ccircle cx='140' cy='120' r='40'/%3E%3Ccircle cx='280' cy='170' r='28'/%3E%3C/g%3E%3Cg fill='%232c4a40'%3E%3Ccircle cx='126' cy='112' r='6'/%3E%3Ccircle cx='154' cy='112' r='6'/%3E%3Cpath d='M126 138q14 12 28 0' stroke='%232c4a40' stroke-width='5' fill='none' stroke-linecap='round'/%3E%3C/g%3E%3C/svg%3E" alt="专题「萌宠歪头杀」封面：绿色背景中的猫咪与宠物元素">
+        <span class="vk-topic-state is-going">长期企划</span>
+        <h3>萌宠歪头杀 · 年度合集</h3>
+        <p>全年持续征集的治愈系萌宠影像，按季度整理成合集，年底推出年度精选与用户投票榜单。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 创作者矩阵 -->
+  <section class="vk-section vk-creators" id="vk-creator">
+    <div class="vk-sec-head">
+      <span class="vk-eyebrow">创作者矩阵</span>
+      <h2>让好内容被看见的人</h2>
+      <p>他们来自不同的生活现场，却都在用影像记录真实的欢乐。点击卡片可查看创作者档案。</p>
+    </div>
+
+    <div class="vk-creator-grid">
+      <button class="vk-creator" data-vk-creator="舟行记|城市探索影像创作者，擅长用长镜头记录城市细节，作品节奏舒缓。|186|52000|#2c3f52|舟">
+        <span class="vk-creator-avatar" style="background:#2c3f52">舟</span>
+        <h3>舟行记</h3>
+        <div class="vk-creator-field">城市探索 / 纪实影像</div>
+        <p>用镜头丈量城市，喜欢在清晨和深夜出门，记录那些不被打扰的角落。</p>
+        <div class="vk-creator-stats">
+          <span><b>186</b><span>作品</span></span>
+          <span><b>5.2万</b><span>关注</span></span>
+        </div>
+      </button>
+
+      <button class="vk-creator" data-vk-creator="阿木手作|手作区创作者，专注木工与陶艺，擅长把翻车过程剪成喜剧。|142|38000|#5b4b8a|阿">
+        <span class="vk-creator-avatar" style="background:#5b4b8a">阿</span>
+        <h3>阿木手作</h3>
+        <div class="vk-creator-field">手作 / 翻车日常</div>
+        <p>做木工也做陶艺，相信失败比成功更有观赏性，作品里总有笑声。</p>
+        <div class="vk-creator-stats">
+          <span><b>142</b><span>作品</span></span>
+          <span><b>3.8万</b><span>关注</span></span>
+        </div>
+      </button>
+
+      <button class="vk-creator" data-vk-creator="豆腐日常|萌宠类创作者，主角是一只叫豆腐的橘猫，内容以治愈系日常为主。|254|96000|#3f6b5e|豆">
+        <span class="vk-creator-avatar" style="background:#3f6b5e">豆</span>
+        <h3>豆腐日常</h3>
+        <div class="vk-creator-field">萌宠 / 治愈影像</div>
+        <p>一台相机，一只橘猫，记录它每天在窗台、沙发和纸箱之间的小小冒险。</p>
+        <div class="vk-creator-stats">
+          <span><b>254</b><span>作品</span></span>
+          <span><b>9.6万</b><span>关注</span></span>
+        </div>
+      </button>
+
+      <button class="vk-creator" data-vk-creator="林间慢记|生活方式创作者，记录咖啡、阅读与慢节奏的日常片段。|98|27000|#b5743a|林">
+        <span class="vk-creator-avatar" style="background:#b5743a">林</span>
+        <h3>林间慢记</h3>
+        <div class="vk-creator-field">生活方式 / 日常记录</div>
+        <p>喜欢把日子过慢一点，用影像记录咖啡、书和窗外变化的季节。</p>
+        <div class="vk-creator-stats">
+          <span><b>98</b><span>作品</span></span>
+          <span><b>2.7万</b><span>关注</span></span>
+        </div>
+      </button>
+    </div>
+
+    <div class="vk-creator-more">
+      <button class="vk-btn vk-btn-ghost" data-vk-open="join">申请加入创作者计划</button>
+    </div>
+  </section>
+
+  <!-- 影像墙 -->
+  <section class="vk-section" id="vk-wall">
+    <div class="vk-sec-head">
+      <span class="vk-eyebrow">影像墙</span>
+      <h2>来自社区的真实画面</h2>
+      <p>这些画面来自用户投稿与创作者日常，没有统一风格，却都有相似的轻松气息。</p>
+    </div>
+
+    <div class="vk-wall-grid">
+      <div class="vk-wall-item big">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'%3E%3Crect width='600' height='600' fill='%23ff8a4c'/%3E%3Cg fill='%23fff7ef'%3E%3Ccircle cx='220' cy='250' r='70'/%3E%3Cpath d='M120 430c22-90 58-130 100-130s78 40 100 130z'/%3E%3C/g%3E%3Cg fill='%23e2501c'%3E%3Ccircle cx='196' cy='238' r='11'/%3E%3Ccircle cx='244' cy='238' r='11'/%3E%3Cpath d='M192 282q28 26 56 0' stroke='%23e2501c' stroke-width='9' fill='none' stroke-linecap='round'/%3E%3C/g%3E%3Cg fill='%23ffb347'%3E%3Ccircle cx='450' cy='150' r='30'/%3E%3Ccircle cx='480' cy='420' r='18'/%3E%3C/g%3E%3C/svg%3E" alt="影像墙大图：橙色调的社区投稿笑脸画面">
+        <span>社区投稿 · 周五的快乐时刻</span>
+      </div>
+      <div class="vk-wall-item">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%233f6b5e'/%3E%3Cg fill='%23f6e7c1'%3E%3Ccircle cx='150' cy='140' r='54'/%3E%3C/g%3E%3Cg fill='%232c4a40'%3E%3Ccircle cx='132' cy='128' r='8'/%3E%3Ccircle cx='168' cy='128' r='8'/%3E%3Cpath d='M132 160q18 16 36 0' stroke='%232c4a40' stroke-width='6' fill='none' stroke-linecap='round'/%3E%3C/g%3E%3C/svg%3E" alt="影像墙图片：绿色背景里的宠物笑脸特写">
+        <span>萌宠日常</span>
+      </div>
+      <div class="vk-wall-item">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f4d6a8'/%3E%3Cg fill='%23b5743a'%3E%3Crect x='60' y='140' width='180' height='80' rx='10'/%3E%3Ccircle cx='150' cy='100' r='34'/%3E%3C/g%3E%3Cg fill='%23fff7ef'%3E%3Ccircle cx='150' cy='96' r='20'/%3E%3C/g%3E%3C/svg%3E" alt="影像墙图片：米色背景中的早餐桌面与咖啡">
+        <span>早餐记录</span>
+      </div>
+      <div class="vk-wall-item wide">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 300'%3E%3Crect width='600' height='300' fill='%232c3f52'/%3E%3Cg fill='%23a9d8ff' opacity='.85'%3E%3Crect x='60' y='120' width='70' height='140'/%3E%3Crect x='160' y='80' width='60' height='180'/%3E%3Crect x='380' y='100' width='80' height='160'/%3E%3Crect x='490' y='140' width='60' height='120'/%3E%3C/g%3E%3Cg fill='%23ffb347'%3E%3Ccircle cx='300' cy='90' r='30'/%3E%3C/g%3E%3C/svg%3E" alt="影像墙宽图：深蓝夜色中的城市建筑与灯光">
+        <span>夜色城市</span>
+      </div>
+      <div class="vk-wall-item tall">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 600'%3E%3Crect width='300' height='600' fill='%235b4b8a'/%3E%3Cg fill='%23e6d9ff'%3E%3Crect x='70' y='120' width='160' height='220' rx='16'/%3E%3C/g%3E%3Cg fill='%23ffb347'%3E%3Ccircle cx='150' cy='200' r='30'/%3E%3Cpath d='M120 280q30-26 60 0' stroke='%23ffb347' stroke-width='7' fill='none' stroke-linecap='round'/%3E%3C/g%3E%3Cg stroke='%23e6d9ff' stroke-width='4' fill='none' opacity='.5'%3E%3Ccircle cx='150' cy='440' r='40'/%3E%3C/g%3E%3C/svg%3E" alt="影像墙竖图：紫色手作工作室里的陶器与工具">
+        <span>手作现场</span>
+      </div>
+      <div class="vk-wall-item">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23e2501c'/%3E%3Cg fill='%23ffe2b8'%3E%3Ccircle cx='150' cy='140' r='56'/%3E%3C/g%3E%3Cg fill='%23e2501c'%3E%3Ccircle cx='132' cy='128' r='8'/%3E%3Ccircle cx='168' cy='128' r='8'/%3E%3Cpath d='M130 160q20 18 40 0' stroke='%23e2501c' stroke-width='7' fill='none' stroke-linecap='round'/%3E%3C/g%3E%3C/svg%3E" alt="影像墙图片：深橙背景中的大笑脸图形">
+        <span>快乐表情</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 随笔 -->
+  <section class="vk-section" id="vk-essay">
+    <div class="vk-sec-head">
+      <span class="vk-eyebrow">编者随笔</span>
+      <h2>镜头之外，我们也想写点什么</h2>
+      <p>这些文字来自团队与创作者，和视频内容互为补充。</p>
+    </div>
+
+    <div class="vk-essay-grid">
+      <article class="vk-essay">
+        <span class="vk-essay-date">2026 / 11 / 12</span>
+        <h3>为什么我们坚持保留“失败镜头”</h3>
+        <p>在剪辑室里，最有争议的环节永远是：这段翻车要不要留？我们的答案通常是保留。因为真实本身就是内容的一部分，一个手忙脚乱的瞬间，比完美的成品更容易让人会心一笑。VK挠痒痒的内容标准里，效果不是唯一指标，真诚才是。</p>
+        <span class="vk-essay-sign">—— 品牌编辑部</span>
+      </article>
+
+      <article class="vk-essay">
+        <span class="vk-essay-date">2026 / 11 / 05</span>
+        <h3>拍城市这件事，慢一点更好</h3>
+        <p>有创作者问我们，城市题材是不是要追热点。我们的建议是：先在你每天经过的那条街站十分钟。你会发现很多被忽略的细节——早点摊的蒸汽、公交车进站的提示音、便利店门口打哈欠的店员。城市影像的魅力不在宏大，而在具体。</p>
+        <span class="vk-essay-sign">—— 舟行记</span>
+      </article>
+
+      <article class="vk-essay">
+        <span class="vk-essay-date">2026 / 10 / 28</span>
+        <h3>关于“解压内容”的一点小观察</h3>
+        <p>我们发现，用户真正需要的不是密集的笑点，而是一段可以放空的几分钟。所以近期的自制栏目里，我们刻意减少了字幕与音效，把节奏留给画面本身。数据反馈很有意思：完播率反而上升了。或许放松这件事，越简单越好。</p>
+        <span class="vk-essay-sign">—— 内容策划组</span>
+      </article>
+    </div>
+  </section>
+
+  <!-- 用户评价 -->
+  <section class="vk-section vk-review-section" id="vk-review">
+    <div class="vk-sec-head">
+      <span class="vk-eyebrow">用户评价</span>
+      <h2>他们这样说起 VK挠痒痒</h2>
+      <p>来自社区、创作者与合作方的真实反馈，我们完整保留，不做修饰。</p>
+    </div>
+
+    <div class="vk-review-grid">
+      <div class="vk-review">
+        <div class="vk-review-head">
+          <span class="vk-avatar" style="background:#e2501c">周</span>
+          <span><b>周一不想上班</b><small>社区用户 · 关注 8 个月</small></span>
+        </div>
+        <div class="vk-stars">★★★★★</div>
+        <p>每天下班回来打开看两期，确实能放松。最喜欢《萌宠歪头杀》，节奏很舒服，没有那种为了搞笑而搞笑的尴尬。</p>
+      </div>
+      <div class="vk-review">
+        <div class="vk-review-head">
+          <span class="vk-avatar" style="background:#3f6b5e">苏</span>
+          <span><b>苏打水</b><small>社区用户 · 关注 1 年</small></span>
+        </div>
+        <div class="vk-stars">★★★★★</div>
+        <p>投稿过一次，反馈很快，编辑还给了一版剪辑建议，挺意外的。感觉这个平台是真的在认真做内容，不是收完稿就不管了。</p>
+      </div>
+      <div class="vk-review">
+        <div class="vk-review-head">
+          <span class="vk-avatar" style="background:#5b4b8a">阿</span>
+          <span><b>阿木手作</b><small>签约创作者</small></span>
+        </div>
+        <div class="vk-stars">★★★★★</div>
+        <p>从投稿到签约大概用了四个月。品牌方不会要求你做夸张的标题，反而一直在说“把过程拍清楚就好”。这一点很难得。</p>
+      </div>
+      <div class="vk-review">
+        <div class="vk-review-head">
+          <span class="vk-avatar" style="background:#b5743a">林</span>
+          <span><b>林间慢记</b><small>生活方式创作者</small></span>
+        </div>
+        <div class="vk-stars">★★★★☆</div>
+        <p>整体体验很好，更新节奏稳定。唯一的建议是希望专题的报名入口再显眼一点，有时候会找不到。</p>
+      </div>
+      <div class="vk-review">
+        <div class="vk-review-head">
+          <span class="vk-avatar" style="background:#2c3f52">陈</span>
+          <span><b>陈小满</b><small>社区用户 · 关注 3 个月</small></span>
+        </div>
+        <div class="vk-stars">★★★★★</div>
+        <p>画面真的很干净，看得出是按标准做的。晚上投屏看也不糊，这点比很多同类内容好。</p>
+      </div>
+      <div class="vk-review">
+        <div class="vk-review-head">
+          <span class="vk-avatar" style="background:#8a4f21">合</span>
+          <span><b>某生活方式品牌</b><small>合作伙伴</small></span>
+        </div>
+        <div class="vk-stars">★★★★★</div>
+        <p>合作过一期联名企划，沟通流程很清楚，内容风格也和我们的品牌调性吻合。后续还会继续合作。</p>
+      </div>
+      <div class="vk-review">
+        <div class="vk-review-head">
+          <span class="vk-avatar" style="background:#4a6b8a">小</span>
+          <span><b>小鹿乱撞</b><small>社区用户 · 关注 6 个月</small></span>
+        </div>
+        <div class="vk-stars">★★★★★</div>
+        <p>喜欢《城市荒诞观察》，看完之后自己也试着拍了一段，才发现记录日常比想象中难，也更有的聊。</p>
+      </div>
+      <div class="vk-review">
+        <div class="vk-review-head">
+          <span class="vk-avatar" style="background:#6b8a4a">何</span>
+          <span><b>何必呢</b><small>社区用户 · 关注 2 年</small></span>
+        </div>
+        <div class="vk-stars">★★★★☆</div>
+        <p>从最早几期追到现在，能感觉到内容越来越成熟。希望以后能多做点长一点的深度企划。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 创作灵感 -->
+  <section class="vk-section" id="vk-ideas">
+    <div class="vk-sec-head">
+      <span class="vk-eyebrow">创作灵感</span>
+      <h2>想拍点什么？这里有一些起点</h2>
+      <p>我们整理了近期投稿中最常出现的三个困境，并给出可执行的思路，供创作者参考。</p>
+    </div>
+
+    <div class="vk-ideas">
+      <div class="vk-idea">
+        <span class="vk-idea-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v2M12 19v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M3 12h2M19 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/><circle cx="12" cy="12" r="4"/></svg></span>
+        <h3>选题没方向</h3>
+        <p>从你昨天做过的十件小事里挑一件，问自己：这件事有没有让谁笑过？有，就可以拍。</p>
+        <ul>
+          <li>失败过程比成功结果更好看</li>
+          <li>具体的小事比宏大的主题更有共鸣</li>
+          <li>先拍十分钟，再想剪什么</li>
+        </ul>
+      </div>
+
+      <div class="vk-idea">
+        <span class="vk-idea-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M8 2v4M16 2v4M3 10h18"/></svg></span>
+        <h3>节奏总是拖</h3>
+        <p>大部分素材都可以再删 20%。先按情绪切段，再按呼吸切点，最后才考虑加不加字幕。</p>
+        <ul>
+          <li>一支短片只讲一个情绪</li>
+          <li>留白比音效更能打动人</li>
+          <li>试看三遍，第三遍开始删</li>
+        </ul>
+      </div>
+
+      <div class="vk-idea">
+        <span class="vk-idea-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5a2 2 0 012-2h9l5 5v11a2 2 0 01-2 2H6a2 2 0 01-2-2z"/><path d="M14 3v6h6"/></svg></span>
+        <h3>不知道投哪</h3>
+        <p>投稿通道全年开放。带有具体生活细节的作品，会比追热点的作品更容易被选入专题。</p>
+        <ul>
+          <li>投稿后 3 个工作日内反馈</li>
+          <li>入选作品由官方渠道发布</li>
+          <li>优质作者可进入签约评估</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 企业动态 + FAQ -->
+  <section class="vk-section" id="vk-news">
+    <div class="vk-sec-head">
+      <span class="vk-eyebrow">企业动态</span>
+      <h2>品牌与社区的最新进度</h2>
+      <p>官方发布的内容更新、活动报名与社区规则调整，都会在这里同步。</p>
+    </div>
+
+    <div class="vk-split">
+      <div class="vk-timeline">
+        <div class="vk-timeline-item">
+          <time>2026 / 11 / 18</time>
+          <h3>「挠痒痒实验室」第二季正式上线</h3>
+          <p>首批 12 支原创短片已发布，涵盖手作、厨房与通勤三个方向，欢迎前往专题页查看完整片单。</p>
+        </div>
+        <div class="vk-timeline-item">
+          <time>2026 / 11 / 09</time>
+          <h3>城市荒诞观察第三站开启报名</h3>
+          <p>本次企划面向所有城市影像创作者开放，投稿截止时间为 12 月 20 日，入选作品将获得官方推荐位。</p>
+        </div>
+        <div class="vk-timeline-item">
+          <time>2026 / 10 / 30</time>
+          <h3>创作者大会年度场次确定</h3>
+          <p>年度创作者大会将于 12 月中旬举办，包含作品放映、圆桌分享与签约仪式，报名通道已在创作中心开放。</p>
+        </div>
+        <div class="vk-timeline-item">
+          <time>2026 / 10 / 16</time>
+          <h3>社区评论规范更新</h3>
+          <p>为保持友好的讨论氛围，平台更新了评论管理规范，鼓励具体、真诚的交流，反对无意义刷屏。</p>
+        </div>
+        <div class="vk-timeline-item">
+          <time>2026 / 09 / 28</time>
+          <h3>秋季专题合集上线</h3>
+          <p>「秋天的十种声音」专题合集发布，收录 18 支用户投稿作品，可在专题页按题材浏览。</p>
+        </div>
+      </div>
+
+      <div class="vk-faq" id="vk-faq">
+        <details open>
+          <summary>VK挠痒痒是什么类型的视频品牌？</summary>
+          <p>VK挠痒痒是一个专注解压与欢乐互动的原创视频品牌，内容以真实、温暖、有趣为底色，涵盖品牌自制栏目、创作者作品与用户投稿三大来源。</p>
+        </details>
+        <details>
+          <summary>如何向平台投稿？需要满足什么条件？</summary>
+          <p>投稿通道全年开放，题材不限，画面清晰、声音干净即可。带有具体生活细节的作品更容易入选专题。投稿后我们会在 3 个工作日内给出反馈，通过后可获得官方发布与推荐支持。</p>
+        </details>
+        <details>
+          <summary>创作者计划的申请流程是怎样的？</summary>
+          <p>先在创作中心提交作品与个人资料，团队会进行内容评估；通过初筛后会安排一次线上沟通，确认方向与合作形式；双方达成一致后签署合作协议，进入持续更新阶段。</p>
+        </details>
+        <details>
+          <summary>平台对内容画质有要求吗？</summary>
+          <p>建议使用 1080P 及以上规格拍摄并导出，保证画面稳定、光线充足。品牌自制内容按企业级高清标准制作，投稿作品会协助进行基础的画面与声音优化。</p>
+        </details>
+        <details>
+          <summary>可以在哪里看到官方发布的更新信息？</summary>
+          <p>页面顶部的公告条与「企业动态」板块会同步最新更新，包括专题上线、活动报名与规则调整，建议定期回访查看。</p>
+        </details>
+        <details>
+          <summary>品牌合作应该如何联系？</summary>
+          <p>可通过页面底部的官方邮箱与我们联系，说明合作形式、内容方向与预期时间。我们会在 3 个工作日内回复，并安排对应的合作负责人对接。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 联系 / 投稿 -->
+  <section class="vk-section" id="vk-contact">
+    <div class="vk-contact">
+      <div>
+        <h2>一起做点让人笑出来的内容</h2>
+        <p>无论你是想投稿、想合作，还是只想聊聊最近看到的一支好短片，我们都愿意听。VK挠痒痒官方网站持续开放沟通入口，期待与你一起把这个社区做得更好。</p>
+        <ul class="vk-contact-info">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3 8l9 6 9-6"/></svg><span>官方邮箱：hello@vktickle.studio</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5a2 2 0 012-2h8l6 6v10a2 2 0 01-2 2H6a2 2 0 01-2-2z"/><path d="M14 3v6h6"/></svg><span>投稿与共创：creator@vktickle.studio</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>工作日 10:00 — 19:00，3 个工作日内回复</span></li>
+        </ul>
+      </div>
+      <div class="vk-contact-actions">
+        <button class="vk-btn vk-btn-primary" data-vk-open="join">我要投稿 / 加入创作者计划</button>
+        <button class="vk-btn vk-btn-ghost" data-vk-open="share">分享本页面</button>
+        <a class="vk-btn vk-btn-ghost" href="#vk-faq">查看常见问题</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="vk-footer">
+  <div class="vk-footer-inner">
+    <div class="vk-footer-top">
+      <div class="vk-footer-brand">
+        <div class="vk-logo">
+          <span class="vk-logo-mark">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5v14l8-7z"/><path d="M14 6v12"/><path d="M18 9v6"/></svg>
+          </span>
+          <span class="vk-logo-text"><b>VK挠痒痒</b><span>VK TICKLE</span></span>
+        </div>
+        <p>VK挠痒痒官方网站，专注解压与欢乐互动的原创视频品牌。我们以真实、温暖、有趣为内容底色，持续运营高品质内容生态，与创作者一同成长。</p>
+      </div>
+      <div class="vk-footer-col">
+        <h4>内容</h4>
+        <ul>
+          <li><a href="#vk-feature">视频焦点</a></li>
+          <li><a href="#vk-stream">热门视频流</a></li>
+          <li><a href="#vk-topic">专题企划</a></li>
+          <li><a href="#vk-wall">影像墙</a></li>
+        </ul>
+      </div>
+      <div class="vk-footer-col">
+        <h4>关于</h4>
+        <ul>
+          <li><a href="#vk-about">品牌解析</a></li>
+          <li><a href="#vk-creator">创作者矩阵</a></li>
+          <li><a href="#vk-news">企业动态</a></li>
+          <li><a href="#vk-review">用户评价</a></li>
+        </ul>
+      </div>
+      <div class="vk-footer-col">
+        <h4>支持</h4>
+        <ul>
+          <li><a href="#vk-faq">帮助中心</a></li>
+          <li><a href="#vk-ideas">创作灵感</a></li>
+          <li><a href="#vk-contact">联系我们</a></li>
+          <li><a href="#vk-contact">投稿入口</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="vk-footer-bottom">
+      <span>© 2026 VK挠痒痒 官方网站 · 版权所有 · 持续运营中</span>
+      <span>品牌主体：VK挠痒痒文化传媒有限公司 · 内容制作与社区运营</span>
+      <span>本站内容均为原创或已获授权，转载请注明出处</span>
+    </div>
+  </div>
+</footer>
+
+<button class="vk-to-top" id="vkToTop" aria-label="回到顶部">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+</button>
+
+<div class="vk-modal-mask" id="vkModalMask">
+  <div class="vk-modal" role="dialog" aria-modal="true" aria-labelledby="vkModalTitle">
+    <button class="vk-modal-close" id="vkModalClose" aria-label="关闭弹窗">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <div id="vkModalContent"></div>
+  </div>
+</div>
+
+<div class="vk-toast" id="vkToast"></div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------- 工具 ---------- */
+  var toastEl = document.getElementById("vkToast");
+  var toastTimer = null;
+  function showToast(msg){
+    toastEl.textContent = msg;
+    toastEl.classList.add("is-show");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){
+      toastEl.classList.remove("is-show");
+    }, 2200);
+  }
+
+  /* ---------- 移动端导航 ---------- */
+  var navToggle = document.getElementById("vkNavToggle");
+  var nav = document.getElementById("vkNav");
+  navToggle.addEventListener("click", function(){
+    var open = nav.classList.toggle("is-open");
+    navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+  nav.addEventListener("click", function(e){
+    if(e.target.tagName === "A"){
+      nav.classList.remove("is-open");
+      navToggle.setAttribute("aria-expanded","false");
+      var links = nav.querySelectorAll("a");
+      for(var i=0;i<links.length;i++){ links[i].classList.remove("is-active"); }
+      e.target.classList.add("is-active");
+    }
+  });
+
+  /* ---------- 搜索反馈 ---------- */
+  var searchInput = document.getElementById("vkSearchInput");
+  var searchBtn = document.getElementById("vkSearchBtn");
+  var searchFeedback = document.getElementById("vkSearchFeedback");
+  var searchIndex = [
+    "挠痒痒实验室 · 第二季",
+    "城市荒诞观察 · 第三站",
+    "萌宠歪头杀 · 年度合集",
+    "三分钟笑场 · 第 27 期",
+    "舟行记 · 城市探索影像",
+    "阿木手作 · 手作翻车日常",
+    "豆腐日常 · 治愈影像",
+    "林间慢记 · 生活方式记录"
+  ];
+  function doSearch(){
+    var q = searchInput.value.trim();
+    if(!q){
+      searchFeedback.textContent = "请输入关键词，例如：萌宠、手作、城市。";
+      searchFeedback.classList.add("is-show");
+      return;
+    }
+    var hits = searchIndex.filter(function(item){ return item.indexOf(q) > -1; });
+    if(hits.length){
+      searchFeedback.textContent = "找到 " + hits.length + " 个相关结果：" + hits.slice(0,3).join("、") + "。";
+    }else{
+      searchFeedback.textContent = "暂无与「" + q + "」完全匹配的内容，试试「解压」「萌宠」或「城市」。";
+    }
+    searchFeedback.classList.add("is-show");
+  }
+  searchBtn.addEventListener("click", doSearch);
+  searchInput.addEventListener("keydown", function(e){
+    if(e.key === "Enter"){ e.preventDefault(); doSearch(); }
+  });
+  document.addEventListener("click", function(e){
+    if(!e.target.closest(".vk-search")){
+      searchFeedback.classList.remove("is-show");
+    }
+  });
+
+  /* ---------- 点赞 / 收藏 ---------- */
+  document.addEventListener("click", function(e){
+    var likeBtn = e.target.closest("[data-vk-like]");
+    if(likeBtn){
+      var numEl = likeBtn.querySelector("[data-vk-like-num]");
+      var liked = likeBtn.classList.toggle("is-liked");
+      if(numEl){
+        var n = parseInt(numEl.textContent, 10) || 0;
+        n = liked ? n + 1 : Math.max(0, n - 1);
+        numEl.textContent = n;
+      }
+      showToast(liked ? "已点赞，感谢你的喜欢" : "已取消点赞");
+      return;
+    }
+    var saveBtn = e.target.closest("[data-vk-save]");
+    if(saveBtn){
+      var saved = saveBtn.classList.toggle("is-saved");
+      showToast(saved ? "已收藏到你的片单" : "已取消收藏");
+    }
+  });
+
+  /* ---------- 题材筛选 ---------- */
+  var filterBar = document.getElementById("vkFilterBar");
+  var streamGrid = document.getElementById("vkStreamGrid");
+  var emptyNote = document.getElementById("vkEmptyNote");
+  if(filterBar && streamGrid){
+    filterBar.addEventListener("click", function(e){
+      var chip = e.target.closest("[data-vk-filter]");
+      if(!chip) return;
+      var filter = chip.getAttribute("data-vk-filter");
+      var chips = filterBar.querySelectorAll(".vk-chip");
+      for(var i=0;i<chips.length;i++){ chips[i].classList.remove("is-active"); }
+      chip.classList.add("is-active");
+
+      var cards = streamGrid.querySelectorAll("[data-vk-tag]");
+      var visible = 0;
+      for(var j=0;j<cards.length;j++){
+        var tag = cards[j].getAttribute("data-vk-tag");
+        var match = (filter === "all") || (tag === filter);
+        cards[j].style.display = match ? "" : "none";
+        if(match) visible++;
+      }
+      emptyNote.classList.toggle("is-show", visible === 0);
+    });
+  }
+
+  /* ---------- 弹窗系统 ---------- */
+  var mask = document.getElementById("vkModalMask");
+  var modalContent = document.getElementById("vkModalContent");
+  var modalClose = document.getElementById("vkModalClose");
+
+  function openModal(html){
+    modalContent.innerHTML = html;
+    mask.classList.add("is-open");
+    document.body.style.overflow = "hidden";
+  }
+  function closeModal(){
+    mask.classList.remove("is-open");
+    document.body.style.overflow = "";
+  }
+  modalClose.addEventListener("click", closeModal);
+  mask.addEventListener("click", function(e){
+    if(e.target === mask) closeModal();
+  });
+  document.addEventListener("keydown", function(e){
+    if(e.key === "Escape" && mask.classList.contains("is-open")) closeModal();
+  });
+
+  function bindModalButtons(){
+    var joinForm = modalContent.querySelector("#vkJoinForm");
+    if(joinForm){
+      joinForm.addEventListener("submit", function(e){
+        e.preventDefault();
+        closeModal();
+        showToast("提交成功，我们会在 3 个工作日内联系你");
+      });
+    }
+    var shareCopy = modalContent.querySelector("#vkCopyLink");
+    if(shareCopy){
+      shareCopy.addEventListener("click", function(){
+        var link = "https://vktickle.studio/";
+        if(navigator.clipboard && navigator.clipboard.writeText){
+          navigator.clipboard.writeText(link).then(function(){
+            showToast("页面链接已复制到剪贴板");
+          }).catch(function(){
+            showToast("复制失败，请手动复制页面地址");
+          });
+        }else{
+          showToast("当前环境不支持自动复制，请手动复制页面地址");
+        }
+      });
+    }
+    var shareBtns = modalContent.querySelectorAll("[data-vk-share]");
+    for(var i=0;i<shareBtns.length;i++){
+      shareBtns[i].addEventListener("click", function(){
+        showToast("已生成分享卡片，可粘贴到 " + this.getAttribute("data-vk-share"));
+      });
+    }
+  }
+
+  function buildShareModal(){
+    openModal(
+      '<h3>分享 VK挠痒痒</h3>' +
+      '<p>把这个页面分享给同样需要放松一下的人，或者复制链接保存到你的收藏夹。</p>' +
+      '<div class="vk-share-row">' +
+        '<button data-vk-share="微信">微信</button>' +
+        '<button data-vk-share="微博">微博</button>' +
+        '<button data-vk-share="QQ">QQ</button>' +
+      '</div>' +
+      '<div class="vk-modal-foot">' +
+        '<button class="vk-btn vk-btn-primary" id="vkCopyLink">复制页面链接</button>' +
+        '<button class="vk-btn vk-btn-outline" id="vkShareClose">取消</button>' +
+      '</div>'
+    );
+    var c = modalContent.querySelector("#vkShareClose");
+    if(c){ c.addEventListener("click", closeModal); }
+    bindModalButtons();
+  }
+
+  function buildJoinModal(){
+    openModal(
+      '<h3>投稿 / 加入创作者计划</h3>' +
+      '<p>留下你的联系方式与创作方向，我们会在 3 个工作日内与你联系，并给出具体的选题与制作建议。</p>' +
+      '<form id="vkJoinForm">' +
+        '<label for="vkJoinName">你的昵称</label>' +
+        '<input id="vkJoinName" type="text" placeholder="例如：舟行记" required>' +
+        '<label for="vkJoinDir">创作方向</label>' +
+        '<input id="vkJoinDir" type="text" placeholder="例如：城市探索 / 萌宠日常 / 手作" required>' +
+        '<label for="vkJoinContact">联系方式</label>' +
+        '<input id="vkJoinContact" type="text" placeholder="邮箱或常用联系方式" required>' +
+        '<label for="vkJoinNote">想拍的内容</label>' +
+        '<textarea id="vkJoinNote" rows="3" placeholder="简单描述一下你想做的选题"></textarea>' +
+        '<div class="vk-modal-foot">' +
+          '<button class="vk-btn vk-btn-primary" type="submit">提交申请</button>' +
+          '<button class="vk-btn vk-btn-outline" type="button" id="vkJoinCancel">稍后再说</button>' +
+        '</div>' +
+      '</form>'
+    );
+    var cancel = modalContent.querySelector("#vkJoinCancel");
+    if(cancel){ cancel.addEventListener("click", closeModal); }
+    bindModalButtons();
+  }
+
+  function buildCreatorModal(name, desc, works, fans, color, initial){
+    openModal(
+      '<h3>' + name + '</h3>' +
+      '<p>' + desc + '</p>' +
+      '<div style="display:flex;gap:14px;align-items:center;padding:16px;background:var(--vk-cream);border-radius:14px">' +
+        '<span class="vk-avatar" style="width:52px;height:52px;font-size:20px;border-radius:16px;background:' + color + '">' + initial + '</span>' +
+        '<div style="display:flex;gap:26px">' +
+          '<div><b style="display:block;font-size:18px">' + works + '</b><small style="color:var(--vk-ink-soft);font-size:12px">作品数</small></div>' +
+          '<div><b style="display:block;font-size:18px">' + fans + '</b><small style="color:var(--vk-ink-soft);font-size:12px">关注数</small></div>' +
+        '</div>' +
+      '</div>' +
+      '<div class="vk-modal-foot">' +
+        '<button class="vk-btn vk-btn-primary" id="vkCreatorClose">关闭</button>' +
+      '</div>'
+    );
+    var c = modalContent.querySelector("#vkCreatorClose");
+    if(c){ c.addEventListener("click", closeModal); }
+  }
+
+  document.addEventListener("click", function(e){
+    var openBtn = e.target.closest("[data-vk-open]");
+    if(openBtn){
+      var type = openBtn.getAttribute("data-vk-open");
+      if(type === "share") buildShareModal();
+      if(type === "join") buildJoinModal();
+      return;
+    }
+    var creatorBtn = e.target.closest("[data-vk-creator]");
+    if(creatorBtn){
+      var parts = creatorBtn.getAttribute("data-vk-creator").split("|");
+      buildCreatorModal(parts[0], parts[1], parts[2], parts[3], parts[4], parts[5]);
+    }
+  });
+
+  /* ---------- 数字滚动 ---------- */
+  var counters = document.querySelectorAll("[data-vk-count]");
+  function animateCount(el){
+    var target = parseInt(el.getAttribute("data-vk-count"), 10) || 0;
+    var start = 0, duration = 1100, t0 = null;
+    function step(ts){
+      if(!t0) t0 = ts;
+      var p = Math.min((ts - t0) / duration, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(start + (target - start) * eased);
+      if(p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  if("IntersectionObserver" in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          animateCount(entry.target);
+          io.unobserve(entry.target);
+        }
+      });
+    }, {threshold:.5});
+    for(var ci=0; ci<counters.length; ci++){ io.observe(counters[ci]); }
+  }
+
+  /* ---------- 回到顶部 ---------- */
+  var toTop = document.getElementById("vkToTop");
+  window.addEventListener("scroll", function(){
+    if(window.scrollY > 600){ toTop.classList.add("is-show"); }
+    else{ toTop.classList.remove("is-show"); }
+  });
+  toTop.addEventListener("click", function(){
+    window.scrollTo({top:0, behavior:"smooth"});
+  });
+
+})();
+</script>
+</body>
+          </html>
